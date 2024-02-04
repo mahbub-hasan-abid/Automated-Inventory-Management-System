@@ -15,13 +15,19 @@ class _UserModuleState extends State<UserModule> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           customAppbar(),
           SizedBox(
             height: 20,
           ),
           Row(
-            children: [Text('User Name :'), Expanded(child: CustomInputBox())],
+            children: [
+              CustomInputBox(
+                controller: userName,
+                title: 'User Name',
+              )
+            ],
           ),
         ],
       ),
