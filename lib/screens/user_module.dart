@@ -10,20 +10,19 @@ class UserModule extends StatefulWidget {
 }
 
 class _UserModuleState extends State<UserModule> {
+  TextEditingController userName = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          //   customAppbar(),
-          SizedBox(
+          const customAppbar(),
+          const SizedBox(
             height: 20,
           ),
           Container(
-              //height: 40,
-
               color: const Color.fromARGB(255, 243, 19, 3),
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
@@ -35,14 +34,22 @@ class _UserModuleState extends State<UserModule> {
                   ),
                 ],
               )),
-          Row(
-            children: [
-              Text(
-                'Username  :',
-              ),
-              CustomInputBox()
-            ],
-          )
+          CustomInputBox(
+            controller: userName,
+            title: 'User Name: ',
+          ),
+          CustomInputBox(
+            controller: userName,
+            title: 'Email: ',
+          ),
+          CustomInputBox(
+            controller: userName,
+            title: 'Phone: ',
+          ),
+          CustomInputBox(
+            controller: userName,
+            title: 'User Name: ',
+          ),
         ],
       ),
     );
