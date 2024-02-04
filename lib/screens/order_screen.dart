@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inventory_management/screens/order_module.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
 import 'package:inventory_management/utils/input_box.dart';
 
@@ -142,7 +143,15 @@ class _OrderPageState extends State<OrderPage> {
               child: CircleAvatar(
                 radius: 15,
                 child: Center(
-                    child: IconButton(onPressed: () {}, icon: Icon(Icons.add))),
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => OrderModule(),
+                              ));
+                        },
+                        icon: Icon(Icons.add))),
               ),
             )
           ],

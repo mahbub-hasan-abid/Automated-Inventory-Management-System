@@ -3,14 +3,14 @@ import 'package:inventory_management/utils/custom_appbar.dart';
 import 'package:inventory_management/utils/custome_button.dart';
 import 'package:inventory_management/utils/input_box.dart';
 
-class UserModule extends StatefulWidget {
-  const UserModule({super.key});
+class CategoriesModule extends StatefulWidget {
+  const CategoriesModule({super.key});
 
   @override
-  State<UserModule> createState() => _UserModuleState();
+  State<CategoriesModule> createState() => _CategoriesModuleState();
 }
 
-class _UserModuleState extends State<UserModule> {
+class _CategoriesModuleState extends State<CategoriesModule> {
   TextEditingController categoryNameText = TextEditingController();
 
   @override

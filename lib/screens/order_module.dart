@@ -200,7 +200,31 @@ class _OrderModuleState extends State<OrderModule> {
                               CustomInputBox(
                                   controller: productNameText,
                                   title: "Product Name"),
-                              Text('#Date picker')
+                              ElevatedButton(
+                                  onPressed: () async {
+                                    DateTime? datepic = await showDatePicker(
+                                        context: context,
+                                        initialDate: DateTime.now(),
+                                        firstDate: DateTime(2023),
+                                        lastDate: DateTime(2025));
+                                    if (datepic != null) {
+                                      print('date picked : ${datepic.day}');
+                                    }
+                                  },
+                                  child: Text("show")),
+                              ElevatedButton(
+                                  onPressed: () async {
+                                    TimeOfDay? pickedTime =
+                                        await showTimePicker(
+                                            context: context,
+                                            initialTime: TimeOfDay.now(),
+                                            initialEntryMode:
+                                                TimePickerEntryMode.input);
+                                    if (pickedTime != null)
+                                      print(
+                                          "time selected : ${pickedTime.hour}: ${pickedTime.minute}");
+                                  },
+                                  child: Text("pick time"))
                             ],
                           ),
                         ),

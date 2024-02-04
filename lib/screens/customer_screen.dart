@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inventory_management/screens/customer_module.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
 
 class CustomerPage extends StatefulWidget {
@@ -79,7 +80,15 @@ class _CustomerPageState extends State<CustomerPage> {
               child: CircleAvatar(
                 radius: 15,
                 child: Center(
-                    child: IconButton(onPressed: () {}, icon: Icon(Icons.add))),
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CustomerModule(),
+                              ));
+                        },
+                        icon: Icon(Icons.add))),
               ),
             )
           ],

@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:inventory_management/screens/categories_screen.dart';
+import 'package:inventory_management/screens/customer_screen.dart';
+import 'package:inventory_management/screens/order_screen.dart';
+import 'package:inventory_management/screens/product_screen.dart';
+import 'package:inventory_management/screens/user_screen.dart';
 
 class customAppbar extends StatelessWidget {
   const customAppbar({super.key});
@@ -37,7 +42,13 @@ class customAppbar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             InkWell(
-              onTap: () => {},
+              onTap: () => {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProductPage(),
+                    ))
+              },
               child: Column(
                 children: [
                   Image.asset('assets/product_50px.png'),
@@ -45,10 +56,13 @@ class customAppbar extends StatelessWidget {
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
                 ],
-              ), // Replace with your image path
+              ),
             ),
             InkWell(
-              onTap: () => {},
+              onTap: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CustomerPage()))
+              },
               child: Column(
                 children: [
                   Image.asset('assets/user_50px.png'),
@@ -56,10 +70,16 @@ class customAppbar extends StatelessWidget {
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
                 ],
-              ), // Replace with your image path
+              ),
             ),
             InkWell(
-              onTap: () => {},
+              onTap: () => {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CategoriesPage(),
+                    ))
+              },
               child: Column(
                 children: [
                   Image.asset('assets/categ_50px.png'),
@@ -70,7 +90,10 @@ class customAppbar extends StatelessWidget {
               ), // Replace with your image path
             ),
             InkWell(
-              onTap: () => {},
+              onTap: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => UserPage()))
+              },
               child: Column(
                 children: [
                   Image.asset('assets/customer_50px.png'),
@@ -81,7 +104,13 @@ class customAppbar extends StatelessWidget {
               ), // Replace with your image path
             ),
             InkWell(
-              onTap: () => {},
+              onTap: () => {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => OrderPage(),
+                    ))
+              },
               child: Column(
                 children: [
                   Image.asset('assets/order_50px.png'),

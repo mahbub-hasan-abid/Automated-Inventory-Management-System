@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:inventory_management/screens/order_module.dart';
+import 'package:inventory_management/utils/custom_appbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const OrderModule(),
+      home: Scaffold(body: Center(child: const customAppbar())),
     );
   }
 }
