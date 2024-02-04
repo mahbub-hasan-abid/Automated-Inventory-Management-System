@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/screens/order_module.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
@@ -95,6 +96,96 @@ class _OrderPageState extends State<OrderPage> {
           ),
 
           //data will input here from databae
+          StreamBuilder(
+            stream: FirebaseFirestore.instance.collection('orders').snapshots(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Center(child: CircularProgressIndicator());
+              }
+              final fetchedData = snapshot.data!.docs;
+
+              return ListView.builder(
+                shrinkWrap: true,
+                itemCount: fetchedData.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Container(
+                      child: Row(
+                        children: [
+                          Expanded(
+                              flex: 2,
+                              child: Text(
+                                '     $index',
+                                //    style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 2,
+                              child: Text(
+                                fetchedData[index]['id'],
+                                //  style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 2,
+                              child: Text(
+                                '3rd Dec',
+                                //  style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 3,
+                              child: Text(
+                                fetchedData[index]['product_id'],
+                                // style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 6,
+                              child: Text(
+                                fetchedData[index]['product_name'],
+                                // style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 3,
+                              child: Text(
+                                fetchedData[index]['customer_id'],
+                                //  style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 6,
+                              child: Text(
+                                fetchedData[index]['customer_name'],
+                                //  style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 2,
+                              child: Text(
+                                fetchedData[index]['quantity'],
+                                //   style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 2,
+                              child: Text(
+                                fetchedData[index]['price'],
+                                //   style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 2,
+                              child: Text(
+                                fetchedData[index]['total'],
+                                //    style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 2,
+                              child: Text(
+                                'Delete',
+                                //    style: TextStyle(color: Colors.white),
+                              ))
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
+          )
         ],
       ),
       bottomNavigationBar: Container(

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/screens/customer_module.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
@@ -46,6 +47,12 @@ class _CustomerPageState extends State<CustomerPage> {
                         style: TextStyle(color: Colors.white),
                       )),
                   Expanded(
+                      flex: 5,
+                      child: Text(
+                        'Address',
+                        style: TextStyle(color: Colors.white),
+                      )),
+                  Expanded(
                       flex: 1,
                       child: Text(
                         'Edit ',
@@ -63,6 +70,74 @@ class _CustomerPageState extends State<CustomerPage> {
           ),
 
           //data will input here from databae
+          StreamBuilder(
+            stream:
+                FirebaseFirestore.instance.collection('customers').snapshots(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Center(child: CircularProgressIndicator());
+              }
+              final fetchedData = snapshot.data!.docs;
+
+              return ListView.builder(
+                shrinkWrap: true,
+                itemCount: fetchedData.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Container(
+                      //  color: const Color.fromARGB(255, 2, 52, 94),
+                      child: Row(
+                        children: [
+                          Expanded(
+                              flex: 1,
+                              child: Text(
+                                '     $index',
+                                //  style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 2,
+                              child: Text(
+                                fetchedData[index]['id'],
+                                //  style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 6,
+                              child: Text(
+                                fetchedData[index]['name'],
+                                //  style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 4,
+                              child: Text(
+                                fetchedData[index]['phone'],
+                                //    style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 5,
+                              child: Text(
+                                fetchedData[index]['address'],
+                                //   style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 1,
+                              child: Text(
+                                'Edit ',
+                                //    style: TextStyle(color: Colors.white),
+                              )),
+                          Expanded(
+                              flex: 1,
+                              child: Text(
+                                'Delete',
+                                //   style: TextStyle(color: Colors.white),
+                              ))
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
+          )
         ],
       ),
       bottomNavigationBar: Container(

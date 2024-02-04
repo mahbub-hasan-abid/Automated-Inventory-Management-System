@@ -1,6 +1,12 @@
+import 'dart:math';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:inventory_management/screens/categories_screen.dart';
+import 'package:inventory_management/screens/customer_screen.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
 import 'package:inventory_management/utils/custome_button.dart';
+import 'package:inventory_management/utils/flutter_toast.dart';
 import 'package:inventory_management/utils/input_box.dart';
 
 class CustomerModule extends StatefulWidget {
@@ -13,6 +19,44 @@ class CustomerModule extends StatefulWidget {
 class _CustomerModuleState extends State<CustomerModule> {
   TextEditingController customerNameText = TextEditingController();
   TextEditingController phoneText = TextEditingController();
+  TextEditingController addressText = TextEditingController();
+  //TextEditingController phoneText = TextEditingController();
+
+  String generateRandomID() {
+    const _chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+    final _rnd = Random();
+
+    String getRandomString(int length) => String.fromCharCodes(
+          Iterable.generate(
+            length,
+            (_) => _chars.codeUnitAt(_rnd.nextInt(_chars.length)),
+          ),
+        );
+
+    return getRandomString(4); // Generate a 4-letter random ID
+  }
+
+  void uploadToFirebase() async {
+    if (customerNameText.text.isEmpty ||
+        phoneText.text.isEmpty ||
+        addressText.text.isEmpty) {
+      showToastMessage('Please input first');
+      return;
+    }
+    await FirebaseFirestore.instance.collection('customers').add({
+      'name': customerNameText.text,
+      'id': generateRandomID(),
+      'phone': phoneText.text,
+      'address': addressText.text
+    });
+    showToastMessage('Customer added!');
+
+    if (context.mounted) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => CustomerPage()));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,11 +88,15 @@ class _CustomerModuleState extends State<CustomerModule> {
             children: [
               CustomInputBox(
                 controller: customerNameText,
-                title: 'User Name',
+                title: 'Full Name',
               ),
               CustomInputBox(
                 controller: phoneText,
                 title: 'Phone Number',
+              ),
+              CustomInputBox(
+                controller: addressText,
+                title: 'Address',
               ),
             ],
           ),
@@ -56,7 +104,8 @@ class _CustomerModuleState extends State<CustomerModule> {
             height: 20,
           ),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            customButton(title: 'Save'),
+            GestureDetector(
+                onTap: uploadToFirebase, child: customButton(title: 'Save')),
             SizedBox(
               width: 10,
             ),

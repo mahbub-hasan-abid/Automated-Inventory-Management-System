@@ -1,6 +1,11 @@
+import 'dart:math';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:inventory_management/screens/categories_screen.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
 import 'package:inventory_management/utils/custome_button.dart';
+import 'package:inventory_management/utils/flutter_toast.dart';
 import 'package:inventory_management/utils/input_box.dart';
 
 class CategoriesModule extends StatefulWidget {
@@ -12,6 +17,38 @@ class CategoriesModule extends StatefulWidget {
 
 class _CategoriesModuleState extends State<CategoriesModule> {
   TextEditingController categoryNameText = TextEditingController();
+
+  String generateRandomID() {
+    const _chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+    final _rnd = Random();
+
+    String getRandomString(int length) => String.fromCharCodes(
+          Iterable.generate(
+            length,
+            (_) => _chars.codeUnitAt(_rnd.nextInt(_chars.length)),
+          ),
+        );
+
+    return getRandomString(4); // Generate a 4-letter random ID
+  }
+
+  void uploadToFirebase() async {
+    if (categoryNameText.text.isEmpty) {
+      showToastMessage('Please input first');
+      return;
+    }
+    await FirebaseFirestore.instance
+        .collection('categories')
+        .add({'name': categoryNameText.text, 'id': generateRandomID()});
+    showToastMessage('Category added!');
+    setState(() {
+      categoryNameText.text = '';
+    });
+    if (context.mounted) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => CategoriesPage()));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +89,8 @@ class _CategoriesModuleState extends State<CategoriesModule> {
             height: 20,
           ),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            customButton(title: 'Save'),
+            GestureDetector(
+                onTap: uploadToFirebase, child: customButton(title: 'Save')),
             SizedBox(
               width: 10,
             ),

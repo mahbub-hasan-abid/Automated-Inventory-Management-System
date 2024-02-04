@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "454968150854",
+    "project_id": "textille-system-solution",
+    "storage_bucket": "textille-system-solution.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454968150854:android:bcd08e0bf8d2d13ff43347",
+        "android_client_info": {
+          "package_name": "com.example.inventory_management"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLEa6jRysl506ONCI9NeG0XbyaURP0WYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

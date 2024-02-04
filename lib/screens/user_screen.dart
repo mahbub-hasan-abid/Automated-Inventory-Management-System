@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inventory_management/screens/product_module.dart';
+import 'package:inventory_management/screens/user_module.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
 
 class UserPage extends StatefulWidget {
@@ -91,7 +92,7 @@ class _UserPageState extends State<UserPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ProductModule(),
+                              builder: (context) => UserModule(),
                             ),
                           );
                         },

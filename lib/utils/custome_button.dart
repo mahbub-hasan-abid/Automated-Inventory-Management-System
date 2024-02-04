@@ -6,17 +6,16 @@ class customButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        // Implement your button action here
-      },
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 6, horizontal: 10),
+      color: Colors.green,
       child: Text(
         title,
         style: TextStyle(color: Colors.white),
       ),
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.green, // Set the background color to green
-      ),
+      // style: ElevatedButton.styleFrom(
+      //   backgroundColor: Colors.green, // Set the background color to green
+      // ),
     );
   }
 }
