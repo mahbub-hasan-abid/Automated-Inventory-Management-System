@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:inventory_management/screens/customer_module.dart';
 import 'package:inventory_management/screens/order_module.dart';
-import 'package:inventory_management/screens/order_screen.dart';
 
 void main() {
   runApp(const MyApp());
