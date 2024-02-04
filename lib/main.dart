@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:inventory_management/screens/user_module.dart';
 
-import 'package:inventory_management/screens/user_screen.dart';
+import 'package:inventory_management/screens/customer_module.dart';
+import 'package:inventory_management/screens/order_module.dart';
+import 'package:inventory_management/screens/order_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const UserModule(),
+      home: const OrderModule(),
     );
   }
 }

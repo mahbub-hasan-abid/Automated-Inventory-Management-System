@@ -15,9 +15,9 @@ class CustomInputBox extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
-              flex: 4,
+              flex: 8,
               child: Text(
-                title,
+                ' $title :',
                 style: const TextStyle(fontSize: 15),
               )),
           Expanded(

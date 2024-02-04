@@ -3,23 +3,16 @@ import 'package:inventory_management/utils/custom_appbar.dart';
 import 'package:inventory_management/utils/custome_button.dart';
 import 'package:inventory_management/utils/input_box.dart';
 
-class UserModule extends StatefulWidget {
-  const UserModule({super.key});
+class CustomerModule extends StatefulWidget {
+  const CustomerModule({super.key});
 
   @override
-  State<UserModule> createState() => _UserModuleState();
+  State<CustomerModule> createState() => _CustomerModuleState();
 }
 
-class _UserModuleState extends State<UserModule> {
-  TextEditingController userNameText = TextEditingController();
-
-  TextEditingController fullNameText = TextEditingController();
-
-  TextEditingController passwordText = TextEditingController();
-  TextEditingController rePasswordText = TextEditingController();
-
+class _CustomerModuleState extends State<CustomerModule> {
+  TextEditingController customerNameText = TextEditingController();
   TextEditingController phoneText = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +30,7 @@ class _UserModuleState extends State<UserModule> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'User Module',
+                  'Customer Module',
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -50,20 +43,8 @@ class _UserModuleState extends State<UserModule> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CustomInputBox(
-                controller: userNameText,
+                controller: customerNameText,
                 title: 'User Name',
-              ),
-              CustomInputBox(
-                controller: fullNameText,
-                title: ' Full Name',
-              ),
-              CustomInputBox(
-                controller: passwordText,
-                title: 'Password ',
-              ),
-              CustomInputBox(
-                controller: rePasswordText,
-                title: 'Re-type Password',
               ),
               CustomInputBox(
                 controller: phoneText,

@@ -3,22 +3,22 @@ import 'package:inventory_management/utils/custom_appbar.dart';
 import 'package:inventory_management/utils/custome_button.dart';
 import 'package:inventory_management/utils/input_box.dart';
 
-class UserModule extends StatefulWidget {
-  const UserModule({super.key});
+class ProductModule extends StatefulWidget {
+  const ProductModule({super.key});
 
   @override
-  State<UserModule> createState() => _UserModuleState();
+  State<ProductModule> createState() => _ProductModuleState();
 }
 
-class _UserModuleState extends State<UserModule> {
-  TextEditingController userNameText = TextEditingController();
+class _ProductModuleState extends State<ProductModule> {
+  TextEditingController productNameText = TextEditingController();
 
-  TextEditingController fullNameText = TextEditingController();
+  TextEditingController quantityText = TextEditingController();
 
-  TextEditingController passwordText = TextEditingController();
-  TextEditingController rePasswordText = TextEditingController();
+  TextEditingController priceText = TextEditingController();
+  TextEditingController descriptionText = TextEditingController();
 
-  TextEditingController phoneText = TextEditingController();
+  TextEditingController categoryText = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class _UserModuleState extends State<UserModule> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'User Module',
+                  'Product Module',
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -50,24 +50,24 @@ class _UserModuleState extends State<UserModule> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CustomInputBox(
-                controller: userNameText,
-                title: 'User Name',
+                controller: productNameText,
+                title: 'Product Name',
               ),
               CustomInputBox(
-                controller: fullNameText,
-                title: ' Full Name',
+                controller: quantityText,
+                title: ' Quantity',
               ),
               CustomInputBox(
-                controller: passwordText,
-                title: 'Password ',
+                controller: priceText,
+                title: 'Price',
               ),
               CustomInputBox(
-                controller: rePasswordText,
-                title: 'Re-type Password',
+                controller: descriptionText,
+                title: 'Description',
               ),
               CustomInputBox(
-                controller: phoneText,
-                title: 'Phone Number',
+                controller: categoryText,
+                title: 'category',
               ),
             ],
           ),

@@ -11,14 +11,7 @@ class UserModule extends StatefulWidget {
 }
 
 class _UserModuleState extends State<UserModule> {
-  TextEditingController userNameText = TextEditingController();
-
-  TextEditingController fullNameText = TextEditingController();
-
-  TextEditingController passwordText = TextEditingController();
-  TextEditingController rePasswordText = TextEditingController();
-
-  TextEditingController phoneText = TextEditingController();
+  TextEditingController categoryNameText = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +30,7 @@ class _UserModuleState extends State<UserModule> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'User Module',
+                  'Category Module',
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -50,24 +43,8 @@ class _UserModuleState extends State<UserModule> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CustomInputBox(
-                controller: userNameText,
-                title: 'User Name',
-              ),
-              CustomInputBox(
-                controller: fullNameText,
-                title: ' Full Name',
-              ),
-              CustomInputBox(
-                controller: passwordText,
-                title: 'Password ',
-              ),
-              CustomInputBox(
-                controller: rePasswordText,
-                title: 'Re-type Password',
-              ),
-              CustomInputBox(
-                controller: phoneText,
-                title: 'Phone Number',
+                controller: categoryNameText,
+                title: 'Category Name',
               ),
             ],
           ),
