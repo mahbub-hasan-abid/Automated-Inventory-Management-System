@@ -15,34 +15,13 @@ class _UserModuleState extends State<UserModule> {
     return Scaffold(
       body: Column(
         children: [
-          //   customAppbar(),
+          customAppbar(),
           SizedBox(
             height: 20,
           ),
-          Container(
-              //height: 40,
-
-              color: const Color.fromARGB(255, 243, 19, 3),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'User Module ',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ],
-              )),
           Row(
-            children: [
-              Text(
-                'Username  :',
-              ),
-              CustomInputBox()
-            ],
-          )
+            children: [Text('User Name :'), Expanded(child: CustomInputBox())],
+          ),
         ],
       ),
     );

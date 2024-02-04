@@ -11,15 +11,14 @@ class _CustomInputBoxState extends State<CustomInputBox> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 10,
+      width: 35,
       child: TextField(
-        // decoration: InputDecoration(
-        //   border: OutlineInputBorder(
-        //     borderRadius: BorderRadius.circular(15),
-        //   ),
-        //   labelText: 'Custom Input Box',
-        //   prefixIcon: Icon(Icons.person),
-        // ),
+        decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          labelText: 'Custom Input Box',
+        ),
         style: TextStyle(fontSize: 18),
       ),
     );
