@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/model/customer_model.dart';
 import 'package:inventory_management/model/product_model.dart';
+import 'package:inventory_management/screens/order_screen.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
 import 'package:inventory_management/utils/custom_dropdown.dart';
 import 'package:inventory_management/utils/custome_button.dart';
@@ -63,6 +64,8 @@ class _OrderModuleState extends State<OrderModule> {
       'total': totalText.text,
     });
     showToastMessage('Order has been created');
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => OrderPage()));
   }
 
   Future<bool> loadCustomerNames() async {

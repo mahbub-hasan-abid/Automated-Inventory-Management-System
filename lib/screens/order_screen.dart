@@ -218,16 +218,16 @@ class _OrderPageState extends State<OrderPage> {
               SizedBox(
                 height: 20,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Order   :   ', style: TextStyle(color: Colors.white)),
-                  Text('                #data from db  ',
-                      style: TextStyle(color: Colors.white)),
-                  Text("  #amount from db",
-                      style: TextStyle(color: Colors.white))
-                ],
-              )
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     Text('Order   :   ', style: TextStyle(color: Colors.white)),
+              //     Text('                #data from db  ',
+              //         style: TextStyle(color: Colors.white)),
+              //     Text("  #amount from db",
+              //         style: TextStyle(color: Colors.white))
+              //   ],
+              // )
             ]),
             Padding(
               padding: EdgeInsets.all(8.0),
