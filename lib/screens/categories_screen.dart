@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/screens/categories_module.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
+import 'package:inventory_management/utils/flutter_toast.dart';
 
 class CategoriesPage extends StatefulWidget {
   const CategoriesPage({super.key});
@@ -11,6 +12,14 @@ class CategoriesPage extends StatefulWidget {
 }
 
 class _CategoriesPageState extends State<CategoriesPage> {
+  void deleteCustomer(String docID) async {
+    await FirebaseFirestore.instance
+        .collection('categories')
+        .doc(docID)
+        .delete();
+    showToastMessage('Category deleted');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,12 +107,17 @@ class _CategoriesPageState extends State<CategoriesPage> {
                               'Edit ',
                               // style: TextStyle(color: Colors.white),
                             )),
-                        Expanded(
-                            flex: 1,
-                            child: Text(
-                              'Delete',
-                              //  style: TextStyle(color: Colors.white),
-                            ))
+                        GestureDetector(
+                          onTap: () {
+                            deleteCustomer(fetchedData[index].id);
+                          },
+                          child: Expanded(
+                              flex: 1,
+                              child: Text(
+                                'Delete',
+                                //  style: TextStyle(color: Colors.white),
+                              )),
+                        )
                       ],
                     ),
                   );

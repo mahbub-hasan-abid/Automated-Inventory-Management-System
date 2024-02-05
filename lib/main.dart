@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/firebase_options.dart';
+import 'package:inventory_management/screens/login_page.dart';
 
 import 'package:inventory_management/utils/custom_appbar.dart';
 
@@ -19,12 +20,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      showSemanticsDebugger: false,
+      title: 'KhanSons',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Scaffold(body: Center(child: const customAppbar())),
+      home: Scaffold(body: Center(child: const LoginPage())),
     );
   }
 }

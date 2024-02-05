@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/screens/customer_module.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
+import 'package:inventory_management/utils/flutter_toast.dart';
 
 class CustomerPage extends StatefulWidget {
   const CustomerPage({super.key});
@@ -11,6 +12,14 @@ class CustomerPage extends StatefulWidget {
 }
 
 class _CustomerPageState extends State<CustomerPage> {
+  void deleteCustomer(String docID) async {
+    await FirebaseFirestore.instance
+        .collection('customers')
+        .doc(docID)
+        .delete();
+    showToastMessage('Customer deleted');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -124,12 +133,17 @@ class _CustomerPageState extends State<CustomerPage> {
                                 'Edit ',
                                 //    style: TextStyle(color: Colors.white),
                               )),
-                          Expanded(
-                              flex: 1,
-                              child: Text(
-                                'Delete',
-                                //   style: TextStyle(color: Colors.white),
-                              ))
+                          GestureDetector(
+                            onTap: () {
+                              deleteCustomer(fetchedData[index].id);
+                            },
+                            child: Expanded(
+                                flex: 1,
+                                child: Text(
+                                  'Delete',
+                                  //   style: TextStyle(color: Colors.white),
+                                )),
+                          )
                         ],
                       ),
                     ),
