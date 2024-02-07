@@ -75,7 +75,9 @@ class _UserModuleState extends State<UserModule> {
             height: 20,
           ),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            customButton(title: 'Save'),
+            customButton(
+              title: 'Save',
+            ),
             SizedBox(
               width: 10,
             ),

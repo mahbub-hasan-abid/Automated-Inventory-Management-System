@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:inventory_management/screens/home_page.dart';
-import 'package:inventory_management/utils/custom_appbar.dart';
 import 'package:inventory_management/utils/flutter_toast.dart';
 
 class LoginPage extends StatefulWidget {

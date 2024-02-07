@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:inventory_management/firebase_options.dart';
 import 'package:inventory_management/screens/login_page.dart';
 
-import 'package:inventory_management/utils/custom_appbar.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
