@@ -2,8 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/firebase_options.dart';
 import 'package:inventory_management/screens/login_page.dart';
-
-
+import 'package:inventory_management/utils/custom_appbar.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Scaffold(body: Center(child: const LoginPage())),
+      home: Scaffold(body: Center(child: const customAppbar())),
     );
   }
 }

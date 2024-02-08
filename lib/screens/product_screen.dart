@@ -176,18 +176,23 @@ class _ProductPageState extends State<ProductPage> {
             ),
             Padding(
               padding: EdgeInsets.all(8.0),
-              child: CircleAvatar(
-                radius: 15,
-                child: Center(
-                    child: IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ProductModule(),
-                              ));
-                        },
-                        icon: Icon(Icons.add))),
+              child: Hero(
+                tag: 'Product_page_to_module',
+                child: CircleAvatar(
+                  radius: 40,
+                  child: Stack(children: [
+                    Center(
+                        child: IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ProductModule(),
+                                  ));
+                            },
+                            icon: Icon(Icons.add))),
+                  ]),
+                ),
               ),
             )
           ],

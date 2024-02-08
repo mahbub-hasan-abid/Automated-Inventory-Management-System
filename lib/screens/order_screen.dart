@@ -232,7 +232,7 @@ class _OrderPageState extends State<OrderPage> {
             Padding(
               padding: EdgeInsets.all(8.0),
               child: CircleAvatar(
-                radius: 15,
+                radius: 20,
                 child: Center(
                     child: IconButton(
                         onPressed: () {

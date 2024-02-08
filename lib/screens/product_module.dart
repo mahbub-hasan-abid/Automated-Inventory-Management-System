@@ -96,17 +96,20 @@ class _ProductModuleState extends State<ProductModule> {
                 Container(
                   height: 35,
                   color: const Color.fromARGB(255, 240, 21, 5),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Product Module',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
-                      ),
-                    ],
+                  child: Hero(
+                    tag: 'Product_page_to_module',
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Product Module',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Column(

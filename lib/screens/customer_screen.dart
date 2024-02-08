@@ -167,7 +167,7 @@ class _CustomerPageState extends State<CustomerPage> {
             Padding(
               padding: EdgeInsets.all(8.0),
               child: CircleAvatar(
-                radius: 15,
+                radius: 40,
                 child: Center(
                     child: IconButton(
                         onPressed: () {
