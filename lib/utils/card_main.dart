@@ -1,3 +1,4 @@
+import 'package:animated_digit/animated_digit.dart';
 import 'package:flutter/material.dart';
 
 class cardMain extends StatelessWidget {
@@ -27,9 +28,10 @@ class cardMain extends StatelessWidget {
                 '$name :',
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
-              Text(
-                '$number',
-                style: TextStyle(color: Colors.white, fontSize: 30),
+              AnimatedDigitWidget(
+                duration: Duration(seconds: 2),
+                value: number,
+                textStyle: TextStyle(color: Colors.white, fontSize: 20),
               ),
             ],
           ),

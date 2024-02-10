@@ -38,6 +38,7 @@ dependencies:
   cloud_firestore: ^4.15.3
   fluttertoast: ^8.2.4
   firebase_core: ^2.25.4
+  animated_digit: ^3.2.3
 
 
 dev_dependencies:
