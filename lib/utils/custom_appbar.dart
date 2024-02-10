@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:inventory_management/screens/categories_screen.dart';
 import 'package:inventory_management/screens/customer_screen.dart';
+import 'package:inventory_management/screens/main_home_screen.dart';
 import 'package:inventory_management/screens/order_screen.dart';
 import 'package:inventory_management/screens/product_screen.dart';
 import 'package:inventory_management/screens/user_screen.dart';
@@ -41,6 +42,23 @@ class customAppbar extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            InkWell(
+              onTap: () => {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ))
+              },
+              child: Column(
+                children: [
+                  Image.asset('assets/home_50px.png'),
+                  Text('Home',
+                      style:
+                          TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
+                ],
+              ),
+            ),
             InkWell(
               onTap: () => {
                 Navigator.push(

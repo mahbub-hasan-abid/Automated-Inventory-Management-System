@@ -24,11 +24,11 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              cardMain(name: 'Product', number: 400),
-              cardMain(name: 'Customer', number: 1200),
-              cardMain(name: 'Categories', number: 30),
-              cardMain(name: 'User', number: 50),
-              cardMain(name: 'Order', number: 70),
+              cardMain(name: 'Product', number: 974),
+              cardMain(name: 'Customer', number: 1274),
+              cardMain(name: 'Categories', number: 37),
+              cardMain(name: 'User', number: 57),
+              cardMain(name: 'Order', number: 74),
             ],
           ),
         ],
