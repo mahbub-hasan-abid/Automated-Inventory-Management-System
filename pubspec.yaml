@@ -39,6 +39,7 @@ dependencies:
   fluttertoast: ^8.2.4
   firebase_core: ^2.25.4
   animated_digit: ^3.2.3
+  fl_chart: ^0.66.2
 
 
 dev_dependencies:
