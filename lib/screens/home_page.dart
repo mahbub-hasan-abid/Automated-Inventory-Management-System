@@ -4,7 +4,6 @@ import 'package:inventory_management/screens/customer_screen.dart';
 import 'package:inventory_management/screens/order_screen.dart';
 import 'package:inventory_management/screens/product_screen.dart';
 import 'package:inventory_management/screens/user_screen.dart';
-import 'package:inventory_management/utils/chart.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

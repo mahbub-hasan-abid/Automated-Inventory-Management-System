@@ -94,57 +94,64 @@ class _CustomerPageState extends State<CustomerPage> {
                 itemBuilder: (context, index) {
                   return ListTile(
                     title: Container(
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 29, 212, 5),
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Colors.black)),
                       //  color: const Color.fromARGB(255, 2, 52, 94),
-                      child: Row(
-                        children: [
-                          Expanded(
-                              flex: 1,
-                              child: Text(
-                                '     $index',
-                                //  style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 2,
-                              child: Text(
-                                fetchedData[index]['id'],
-                                //  style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 6,
-                              child: Text(
-                                fetchedData[index]['name'],
-                                //  style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 4,
-                              child: Text(
-                                fetchedData[index]['phone'],
-                                //    style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 5,
-                              child: Text(
-                                fetchedData[index]['address'],
-                                //   style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 1,
-                              child: Text(
-                                'Edit ',
-                                //    style: TextStyle(color: Colors.white),
-                              )),
-                          GestureDetector(
-                            onTap: () {
-                              deleteCustomer(fetchedData[index].id);
-                            },
-                            child: Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Expanded(
                                 flex: 1,
                                 child: Text(
-                                  'Delete',
+                                  '     $index',
+                                  //  style: TextStyle(color: Colors.white),
+                                )),
+                            Expanded(
+                                flex: 2,
+                                child: Text(
+                                  fetchedData[index]['id'],
+                                  //  style: TextStyle(color: Colors.white),
+                                )),
+                            Expanded(
+                                flex: 6,
+                                child: Text(
+                                  fetchedData[index]['name'],
+                                  //  style: TextStyle(color: Colors.white),
+                                )),
+                            Expanded(
+                                flex: 4,
+                                child: Text(
+                                  fetchedData[index]['phone'],
+                                  //    style: TextStyle(color: Colors.white),
+                                )),
+                            Expanded(
+                                flex: 5,
+                                child: Text(
+                                  fetchedData[index]['address'],
                                   //   style: TextStyle(color: Colors.white),
                                 )),
-                          )
-                        ],
+                            Expanded(
+                                flex: 1,
+                                child: Text(
+                                  'Edit ',
+                                  //    style: TextStyle(color: Colors.white),
+                                )),
+                            GestureDetector(
+                              onTap: () {
+                                deleteCustomer(fetchedData[index].id);
+                              },
+                              child: Expanded(
+                                  flex: 1,
+                                  child: Text(
+                                    'Delete',
+                                    //   style: TextStyle(color: Colors.white),
+                                  )),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   );

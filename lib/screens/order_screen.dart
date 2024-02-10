@@ -109,79 +109,87 @@ class _OrderPageState extends State<OrderPage> {
                 itemCount: fetchedData.length,
                 itemBuilder: (context, index) {
                   return ListTile(
-                    title: Container(
-                      child: Row(
-                        children: [
-                          Expanded(
-                              flex: 2,
-                              child: Text(
-                                '     $index',
-                                //    style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 2,
-                              child: Text(
-                                fetchedData[index]['id'],
-                                //  style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 2,
-                              child: Text(
-                                '3rd Dec',
-                                //  style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 3,
-                              child: Text(
-                                fetchedData[index]['product_id'],
-                                // style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 6,
-                              child: Text(
-                                fetchedData[index]['product_name'],
-                                // style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 3,
-                              child: Text(
-                                fetchedData[index]['customer_id'],
-                                //  style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 6,
-                              child: Text(
-                                fetchedData[index]['customer_name'],
-                                //  style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 2,
-                              child: Text(
-                                fetchedData[index]['quantity'],
-                                //   style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 2,
-                              child: Text(
-                                fetchedData[index]['price'],
-                                //   style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 2,
-                              child: Text(
-                                fetchedData[index]['total'],
-                                //    style: TextStyle(color: Colors.white),
-                              )),
-                          Expanded(
-                              flex: 2,
-                              child: Text(
-                                'Delete',
-                                //    style: TextStyle(color: Colors.white),
-                              ))
-                        ],
+                      title: Column(
+                    children: [
+                      Container(
+                          child: Row(children: [
+                        Expanded(
+                            flex: 2,
+                            child: Text(
+                              '     $index',
+                              //    style: TextStyle(color: Colors.white),
+                            )),
+                        Expanded(
+                            flex: 2,
+                            child: Text(
+                              fetchedData[index]['id'],
+                              //  style: TextStyle(color: Colors.white),
+                            )),
+                        Expanded(
+                            flex: 2,
+                            child: Text(
+                              '3rd Dec',
+                              //  style: TextStyle(color: Colors.white),
+                            )),
+                        Expanded(
+                            flex: 3,
+                            child: Text(
+                              fetchedData[index]['product_id'],
+                              // style: TextStyle(color: Colors.white),
+                            )),
+                        Expanded(
+                            flex: 6,
+                            child: Text(
+                              fetchedData[index]['product_name'],
+                              // style: TextStyle(color: Colors.white),
+                            )),
+                        Expanded(
+                            flex: 3,
+                            child: Text(
+                              fetchedData[index]['customer_id'],
+                              //  style: TextStyle(color: Colors.white),
+                            )),
+                        Expanded(
+                            flex: 6,
+                            child: Text(
+                              fetchedData[index]['customer_name'],
+                              //  style: TextStyle(color: Colors.white),
+                            )),
+                        Expanded(
+                            flex: 2,
+                            child: Text(
+                              fetchedData[index]['quantity'],
+                              //   style: TextStyle(color: Colors.white),
+                            )),
+                        Expanded(
+                            flex: 2,
+                            child: Text(
+                              fetchedData[index]['price'],
+                              //   style: TextStyle(color: Colors.white),
+                            )),
+                        Expanded(
+                            flex: 2,
+                            child: Text(
+                              fetchedData[index]['total'],
+                              //    style: TextStyle(color: Colors.white),
+                            )),
+                        Expanded(
+                            flex: 2,
+                            child: Text(
+                              'Delete',
+                              //    style: TextStyle(color: Colors.white),
+                            )),
+                      ])),
+                      Divider(
+                        color: Color.fromARGB(
+                            255, 0, 0, 0), // Set your desired color
+                        height: 22.0, // Set the height of the line
+                        thickness: 2.0, // Set the line thickness
+                        indent: 10.0, // Indent the line from the left
+                        endIndent: 10.0, // Indent the line from the right
                       ),
-                    ),
-                  );
+                    ],
+                  ));
                 },
               );
             },
