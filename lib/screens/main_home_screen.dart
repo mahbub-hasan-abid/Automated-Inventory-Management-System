@@ -26,11 +26,11 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                cardMain(name: 'Product', number: 974),
-                cardMain(name: 'Customer', number: 1274),
+                cardMain(name: 'Product', number: 74),
+                cardMain(name: 'Customer', number: 80),
                 cardMain(name: 'Categories', number: 37),
                 cardMain(name: 'User', number: 57),
-                cardMain(name: 'Order', number: 74),
+                cardMain(name: 'Order', number: 69),
               ],
             ),
             SizedBox(
@@ -42,11 +42,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(30))),
                 height: 400,
                 child: BarChartSample1(
-                  product_value: 974,
-                  customer_value: 1274,
+                  product_value: 74,
+                  customer_value: 80,
                   categories_value: 37,
                   user_value: 57,
-                  order_value: 74,
+                  order_value: 69,
                 ))
           ],
         ),

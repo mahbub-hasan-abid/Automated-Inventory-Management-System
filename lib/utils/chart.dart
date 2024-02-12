@@ -29,9 +29,9 @@ class BarChartSample1 extends StatefulWidget {
         Colors.red,
       ];
 
-  final Color barBackgroundColor = Color.fromARGB(255, 195, 187, 212);
+  final Color barBackgroundColor = Color.fromARGB(255, 255, 255, 255);
 
-  final Color barColor = Color.fromARGB(255, 255, 255, 255);
+  final Color barColor = Color.fromARGB(255, 247, 222, 2);
   final Color touchedBarColor = const Color.fromARGB(255, 0, 185, 6);
 
   @override
@@ -150,7 +150,7 @@ class BarChartSample1State extends State<BarChartSample1> {
                   color: Color.fromARGB(255, 126, 37, 37), width: 0),
           backDrawRodData: BackgroundBarChartRodData(
             show: true,
-            toY: 2000,
+            toY: 100,
             color: widget.barBackgroundColor,
           ),
         ),
