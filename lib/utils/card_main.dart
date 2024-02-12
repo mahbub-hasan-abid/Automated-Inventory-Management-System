@@ -25,8 +25,8 @@ class cardMain extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                '$name :',
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                '$name',
+                style: TextStyle(color: Colors.white, fontSize: 21),
               ),
               AnimatedDigitWidget(
                 duration: Duration(seconds: 2),

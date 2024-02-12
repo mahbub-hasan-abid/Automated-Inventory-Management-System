@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/utils/card_main.dart';
 import 'package:inventory_management/utils/chart.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
+import 'package:inventory_management/utils/generate_pdf.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,18 +28,18 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                cardMain(name: 'Product', number: 74),
-                cardMain(name: 'Customer', number: 80),
+                cardMain(name: 'Product', number: 974),
+                cardMain(name: 'Customer', number: 1274),
                 cardMain(name: 'Categories', number: 37),
                 cardMain(name: 'User', number: 57),
-                cardMain(name: 'Order', number: 69),
+                cardMain(name: 'Order', number: 74),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: Color.fromARGB(255, 42, 29, 156),
                     borderRadius: BorderRadius.all(Radius.circular(30))),
                 height: 400,
