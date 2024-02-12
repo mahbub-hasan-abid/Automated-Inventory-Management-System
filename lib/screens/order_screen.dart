@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/screens/order_module.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
+import 'package:inventory_management/utils/generate_pdf.dart';
 import 'package:inventory_management/utils/input_box.dart';
 
 class OrderPage extends StatefulWidget {
@@ -18,14 +19,14 @@ class _OrderPageState extends State<OrderPage> {
     return Scaffold(
       body: Column(
         children: [
-          customAppbar(),
+          const customAppbar(),
           ListTile(
             title: Container(
               color: const Color.fromARGB(255, 2, 52, 94),
               child: const Row(
                 children: [
                   Expanded(
-                      flex: 2,
+                      flex: 1,
                       child: Text(
                         '     No',
                         style: TextStyle(color: Colors.white),
@@ -49,19 +50,19 @@ class _OrderPageState extends State<OrderPage> {
                         style: TextStyle(color: Colors.white),
                       )),
                   Expanded(
-                      flex: 6,
+                      flex: 2,
                       child: Text(
                         'Product Name',
                         style: TextStyle(color: Colors.white),
                       )),
                   Expanded(
-                      flex: 3,
+                      flex: 2,
                       child: Text(
                         'Customer ID',
                         style: TextStyle(color: Colors.white),
                       )),
                   Expanded(
-                      flex: 6,
+                      flex: 5,
                       child: Text(
                         'Customer Name',
                         style: TextStyle(color: Colors.white),
@@ -87,6 +88,12 @@ class _OrderPageState extends State<OrderPage> {
                   Expanded(
                       flex: 2,
                       child: Text(
+                        'Invoice',
+                        style: TextStyle(color: Colors.white),
+                      )),
+                  Expanded(
+                      flex: 2,
+                      child: Text(
                         'Delete',
                         style: TextStyle(color: Colors.white),
                       ))
@@ -100,7 +107,7 @@ class _OrderPageState extends State<OrderPage> {
             stream: FirebaseFirestore.instance.collection('orders').snapshots(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               }
               final fetchedData = snapshot.data!.docs;
 
@@ -111,10 +118,9 @@ class _OrderPageState extends State<OrderPage> {
                   return ListTile(
                       title: Column(
                     children: [
-                      Container(
-                          child: Row(children: [
+                      Row(children: [
                         Expanded(
-                            flex: 2,
+                            flex: 1,
                             child: Text(
                               '     $index',
                               //    style: TextStyle(color: Colors.white),
@@ -125,7 +131,7 @@ class _OrderPageState extends State<OrderPage> {
                               fetchedData[index]['id'],
                               //  style: TextStyle(color: Colors.white),
                             )),
-                        Expanded(
+                        const Expanded(
                             flex: 2,
                             child: Text(
                               '3rd Dec',
@@ -138,19 +144,19 @@ class _OrderPageState extends State<OrderPage> {
                               // style: TextStyle(color: Colors.white),
                             )),
                         Expanded(
-                            flex: 6,
+                            flex: 2,
                             child: Text(
                               fetchedData[index]['product_name'],
                               // style: TextStyle(color: Colors.white),
                             )),
                         Expanded(
-                            flex: 3,
+                            flex: 2,
                             child: Text(
                               fetchedData[index]['customer_id'],
                               //  style: TextStyle(color: Colors.white),
                             )),
                         Expanded(
-                            flex: 6,
+                            flex: 5,
                             child: Text(
                               fetchedData[index]['customer_name'],
                               //  style: TextStyle(color: Colors.white),
@@ -175,12 +181,51 @@ class _OrderPageState extends State<OrderPage> {
                             )),
                         Expanded(
                             flex: 2,
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blue),
+                                onPressed: () async {
+                                  await generateAndDownloadInvoice(
+                                    customerAddress: 'Patuakhali',
+                                    customerId: fetchedData[index]
+                                        ['customer_id'],
+                                    customerName: fetchedData[index]
+                                        ['customer_name'],
+                                    orderId: fetchedData[index]['id'],
+                                    products: [
+                                      {
+                                        'price': double.tryParse(
+                                                fetchedData[index]['price']) ??
+                                            0,
+                                        'name': fetchedData[index]
+                                            ['product_name'],
+                                        'id': fetchedData[index]['product_id'],
+                                        'quantity': double.tryParse(
+                                            fetchedData[index]['quantity'] ?? 0)
+                                      }
+                                    ],
+                                    total: double.tryParse(
+                                            fetchedData[index]['total']) ??
+                                        0,
+                                  );
+                                },
+                                child: const Text(
+                                  'Generate',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ))),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const Expanded(
+                            flex: 2,
                             child: Text(
                               'Delete',
                               //    style: TextStyle(color: Colors.white),
                             )),
-                      ])),
-                      Divider(
+                      ]),
+                      const Divider(
                         color: Color.fromARGB(
                             255, 0, 0, 0), // Set your desired color
                         height: 22.0, // Set the height of the line
@@ -219,11 +264,13 @@ class _OrderPageState extends State<OrderPage> {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.1,
                   ),
-                  Text('Quantity  ', style: TextStyle(color: Colors.white)),
-                  Text("  Total Amount", style: TextStyle(color: Colors.white))
+                  const Text('Quantity  ',
+                      style: TextStyle(color: Colors.white)),
+                  const Text("  Total Amount",
+                      style: TextStyle(color: Colors.white))
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               // Row(

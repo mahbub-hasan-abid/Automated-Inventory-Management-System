@@ -40,6 +40,9 @@ dependencies:
   firebase_core: ^2.25.4
   animated_digit: ^3.2.3
   fl_chart: ^0.66.2
+  pdf: ^3.10.7
+  http: ^1.2.0
+  intl: ^0.19.0
 
 
 dev_dependencies:

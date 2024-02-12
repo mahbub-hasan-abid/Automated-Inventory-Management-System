@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/utils/card_main.dart';
 import 'package:inventory_management/utils/chart.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
+import 'package:inventory_management/utils/generate_pdf.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,18 +28,72 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                cardMain(name: 'Product', number: 974),
-                cardMain(name: 'Customer', number: 1274),
-                cardMain(name: 'Categories', number: 37),
+                StreamBuilder(
+                    stream: FirebaseFirestore.instance
+                        .collection('products')
+                        .snapshots(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                      final response = snapshot.data!.docs;
+
+                      return cardMain(name: 'Product', number: response.length);
+                    }),
+                StreamBuilder(
+                    stream: FirebaseFirestore.instance
+                        .collection('customers')
+                        .snapshots(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                      final response = snapshot.data!.docs;
+
+                      return cardMain(
+                          name: 'Customer', number: response.length);
+                    }),
+                StreamBuilder(
+                    stream: FirebaseFirestore.instance
+                        .collection('categories')
+                        .snapshots(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                      final response = snapshot.data!.docs;
+
+                      return cardMain(
+                          name: 'Categories', number: response.length);
+                    }),
                 cardMain(name: 'User', number: 57),
-                cardMain(name: 'Order', number: 74),
+                StreamBuilder(
+                    stream: FirebaseFirestore.instance
+                        .collection('orders')
+                        .snapshots(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                      final response = snapshot.data!.docs;
+
+                      return cardMain(name: 'Orders', number: response.length);
+                    }),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: Color.fromARGB(255, 42, 29, 156),
                     borderRadius: BorderRadius.all(Radius.circular(30))),
                 height: 400,

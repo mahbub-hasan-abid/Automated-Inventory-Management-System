@@ -247,7 +247,7 @@ class _OrderModuleState extends State<OrderModule> {
                               Expanded(
                                   flex: 1,
                                   child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(8.0),
                                     child: Text(
                                       ' No',
                                       style: TextStyle(color: Colors.white),
@@ -260,28 +260,28 @@ class _OrderModuleState extends State<OrderModule> {
                               Expanded(
                                   flex: 3,
                                   child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(8.0),
                                     child: Text('Name',
                                         style: TextStyle(color: Colors.white)),
                                   )),
                               Expanded(
                                   flex: 2,
                                   child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(8.0),
                                     child: Text('Quantity',
                                         style: TextStyle(color: Colors.white)),
                                   )),
                               Expanded(
                                   flex: 2,
                                   child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(8.0),
                                     child: Text('Price',
                                         style: TextStyle(color: Colors.white)),
                                   )),
                               Expanded(
                                   flex: 4,
                                   child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(8.0),
                                     child: Text('Description',
                                         style: TextStyle(color: Colors.white)),
                                   )),
@@ -302,7 +302,7 @@ class _OrderModuleState extends State<OrderModule> {
                                 products.map((e) => e.productName).toList(),
                           ),
                           const Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Text(
                               'PRODUCT',
                               style: TextStyle(
