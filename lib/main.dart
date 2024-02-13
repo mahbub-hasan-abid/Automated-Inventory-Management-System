@@ -1,7 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/firebase_options.dart';
+import 'package:inventory_management/model/product_model.dart';
 import 'package:inventory_management/screens/order_module.dart';
+import 'package:inventory_management/screens/product_module.dart';
 
 import 'package:inventory_management/screens/splash_screen.dart';
 
@@ -20,13 +22,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      showSemanticsDebugger: false,
-      title: 'KhanSons',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: Scaffold(body: const OrderModule()),
-    );
+        debugShowCheckedModeBanner: false,
+        showSemanticsDebugger: false,
+        title: 'KhanSons',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: Scaffold(body: const ProductModule()));
   }
 }

@@ -8,16 +8,21 @@ class customButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 6, horizontal: 10),
-      color: buttonColor,
-      child: Text(
-        title,
-        style: TextStyle(color: Colors.white),
+    return Card(
+      elevation: 5,
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 6, horizontal: 10),
+
+        decoration: BoxDecoration(
+            color: buttonColor, borderRadius: BorderRadius.circular(5)),
+        child: Text(
+          title,
+          style: TextStyle(color: Colors.white),
+        ),
+        // style: ElevatedButton.styleFrom(
+        //   backgroundColor: Colors.green, // Set the background color to green
+        // ),
       ),
-      // style: ElevatedButton.styleFrom(
-      //   backgroundColor: Colors.green, // Set the background color to green
-      // ),
     );
   }
 }
