@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/screens/product_module.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
+import 'package:inventory_management/utils/flutter_toast.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
@@ -11,6 +12,11 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
+  Future<void> deleteProduct(String docID) async {
+    await FirebaseFirestore.instance.collection('products').doc(docID).delete();
+    showToastMessage('Items has been deleted');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,12 +157,17 @@ class _ProductPageState extends State<ProductPage> {
                                   'Edit ',
                                   //   style: TextStyle(color: Colors.white),
                                 )),
-                            Expanded(
-                                flex: 2,
-                                child: Text(
-                                  'Delete',
-                                  //  style: TextStyle(color: Colors.white),
-                                ))
+                            GestureDetector(
+                              onTap: () async {
+                                await deleteProduct(fetchedData[index].id);
+                              },
+                              child: Expanded(
+                                  flex: 2,
+                                  child: Text(
+                                    'Delete',
+                                    //  style: TextStyle(color: Colors.white),
+                                  )),
+                            )
                           ],
                         ),
                       ),
