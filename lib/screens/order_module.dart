@@ -164,38 +164,25 @@ class _OrderModuleState extends State<OrderModule> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Container(
-                              color: const Color.fromARGB(255, 2, 52, 94),
-                              width: MediaQuery.of(context).size.width * .3,
-                              child: const Column(
-                                children: [
-                                  Row(children: [
-                                    Expanded(
-                                        flex: 1,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            ' No',
-                                            style:
-                                                TextStyle(color: Colors.white),
-                                          ),
-                                        )),
-                                    Expanded(
-                                        flex: 1,
-                                        child: Text('Customer Id',
-                                            style: TextStyle(
-                                                color: Colors.white))),
-                                    Expanded(
-                                        flex: 3,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text('Name',
-                                              style: TextStyle(
-                                                  color: Colors.white)),
-                                        )),
-                                  ]),
-                                ],
-                              )),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(35)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'CUSTOMER',
+                                  style: TextStyle(
+                                    fontSize: 30,
+                                    color: const Color.fromARGB(
+                                        255, 255, 255, 255),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                           SizedBox(
                             width: MediaQuery.of(context).size.width * .30,
                             child: CustomDropDown(
@@ -203,18 +190,6 @@ class _OrderModuleState extends State<OrderModule> {
                               options:
                                   customers.map((e) => e.customerName).toList(),
                               title: 'Search',
-                            ),
-                          ),
-                          const Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'CUSTOMER',
-                              style: TextStyle(
-                                fontSize: 30,
-                                color: Colors.blue,
-                                decoration: TextDecoration.underline,
-                                decorationColor: Colors.blue,
-                              ),
                             ),
                           ),
                           CustomSearchBox(
@@ -240,78 +215,30 @@ class _OrderModuleState extends State<OrderModule> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Container(
-                            color: const Color.fromARGB(255, 2, 52, 94),
-                            width: MediaQuery.of(context).size.width * .65,
-                            child: const Row(children: [
-                              Expanded(
-                                  flex: 1,
-                                  child: Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text(
-                                      ' No',
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  )),
-                              Expanded(
-                                  flex: 2,
-                                  child: Text('Product Id',
-                                      style: TextStyle(color: Colors.white))),
-                              Expanded(
-                                  flex: 3,
-                                  child: Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('Name',
-                                        style: TextStyle(color: Colors.white)),
-                                  )),
-                              Expanded(
-                                  flex: 2,
-                                  child: Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('Quantity',
-                                        style: TextStyle(color: Colors.white)),
-                                  )),
-                              Expanded(
-                                  flex: 2,
-                                  child: Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('Price',
-                                        style: TextStyle(color: Colors.white)),
-                                  )),
-                              Expanded(
-                                  flex: 4,
-                                  child: Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text('Description',
-                                        style: TextStyle(color: Colors.white)),
-                                  )),
-                              Expanded(
-                                  flex: 3,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text('Category',
-                                        style: TextStyle(color: Colors.white)),
-                                  )),
-                            ]),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(35)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'PRODUCT',
+                                  style: TextStyle(
+                                    fontSize: 30,
+                                    color: const Color.fromARGB(
+                                        255, 255, 255, 255),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-
                           CustomDropDown(
                             controller: productSearchText,
                             title: 'Search',
                             options:
                                 products.map((e) => e.productName).toList(),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Text(
-                              'PRODUCT',
-                              style: TextStyle(
-                                fontSize: 30,
-                                color: Colors.blue,
-                                decoration: TextDecoration.underline,
-                                decorationColor: Colors.blue,
-                              ),
-                            ),
                           ),
 
                           //under the product text   2 colums in 1 row
