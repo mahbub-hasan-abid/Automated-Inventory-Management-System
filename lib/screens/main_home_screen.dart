@@ -21,8 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            customAppbar(),
-            SizedBox(
+            const customAppbar(),
+            const SizedBox(
               height: 50,
             ),
             Row(

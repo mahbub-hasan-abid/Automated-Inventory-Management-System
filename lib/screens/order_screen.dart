@@ -91,12 +91,6 @@ class _OrderPageState extends State<OrderPage> {
                         'Invoice',
                         style: TextStyle(color: Colors.white),
                       )),
-                  Expanded(
-                      flex: 2,
-                      child: Text(
-                        'Delete',
-                        style: TextStyle(color: Colors.white),
-                      ))
                 ],
               ),
             ),
@@ -218,12 +212,6 @@ class _OrderPageState extends State<OrderPage> {
                         const SizedBox(
                           width: 10,
                         ),
-                        const Expanded(
-                            flex: 2,
-                            child: Text(
-                              'Delete',
-                              //    style: TextStyle(color: Colors.white),
-                            )),
                       ]),
                       const Divider(
                         color: Color.fromARGB(

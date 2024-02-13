@@ -49,7 +49,7 @@ class _UserPageState extends State<UserPage> {
                   Expanded(
                       flex: 4,
                       child: Text(
-                        'Phone',
+                        'Role',
                         style: TextStyle(color: Colors.white),
                       )),
                   Expanded(
@@ -98,7 +98,7 @@ class _UserPageState extends State<UserPage> {
                             flex: 6,
                             child: Text(
                               userData['name'],
-                              style: TextStyle(color: Colors.black),
+                              style: const TextStyle(color: Colors.black),
                             )),
                         Expanded(
                             flex: 4,
@@ -106,7 +106,7 @@ class _UserPageState extends State<UserPage> {
                               userData['email'],
                               style: const TextStyle(color: Colors.black),
                             )),
-                        Expanded(
+                        const Expanded(
                             flex: 4,
                             child: Text(
                               '',
@@ -116,15 +116,15 @@ class _UserPageState extends State<UserPage> {
                             flex: 4,
                             child: Text(
                               userData['role'],
-                              style: TextStyle(color: Colors.black),
+                              style: const TextStyle(color: Colors.black),
                             )),
-                        Expanded(
+                        const Expanded(
                             flex: 1,
                             child: Text(
                               'Edit ',
                               style: TextStyle(color: Colors.white),
                             )),
-                        Expanded(
+                        const Expanded(
                             flex: 1,
                             child: Text(
                               'Delete',
