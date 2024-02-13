@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/screens/user_module.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
@@ -15,7 +16,7 @@ class _UserPageState extends State<UserPage> {
     return Scaffold(
       body: Column(
         children: [
-          customAppbar(),
+          const customAppbar(),
           ListTile(
             title: Container(
               color: const Color.fromARGB(255, 2, 52, 94),
@@ -30,7 +31,7 @@ class _UserPageState extends State<UserPage> {
                   Expanded(
                       flex: 4,
                       child: Text(
-                        'User Name',
+                        'Emai;',
                         style: TextStyle(color: Colors.white),
                       )),
                   Expanded(
@@ -69,6 +70,73 @@ class _UserPageState extends State<UserPage> {
           ),
 
           //data will input here from databae
+          StreamBuilder(
+            stream: FirebaseFirestore.instance.collection('users').snapshots(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+
+              final users = snapshot.data!.docs;
+              return ListView.builder(
+                shrinkWrap: true,
+                itemCount: users.length,
+                itemBuilder: (context, index) {
+                  final userData = users[index];
+                  return ListTile(
+                    title: Row(
+                      children: [
+                        Expanded(
+                            flex: 2,
+                            child: Text(
+                              '     $index',
+                              style: const TextStyle(color: Colors.white),
+                            )),
+                        Expanded(
+                            flex: 6,
+                            child: Text(
+                              userData['name'],
+                              style: TextStyle(color: Colors.black),
+                            )),
+                        Expanded(
+                            flex: 4,
+                            child: Text(
+                              userData['email'],
+                              style: const TextStyle(color: Colors.black),
+                            )),
+                        Expanded(
+                            flex: 4,
+                            child: Text(
+                              '',
+                              style: TextStyle(color: Colors.black),
+                            )),
+                        Expanded(
+                            flex: 4,
+                            child: Text(
+                              userData['role'],
+                              style: TextStyle(color: Colors.black),
+                            )),
+                        Expanded(
+                            flex: 1,
+                            child: Text(
+                              'Edit ',
+                              style: TextStyle(color: Colors.white),
+                            )),
+                        Expanded(
+                            flex: 1,
+                            child: Text(
+                              'Delete',
+                              style: TextStyle(color: Colors.white),
+                            ))
+                      ],
+                    ),
+                  );
+                },
+              );
+            },
+          )
         ],
       ),
       bottomNavigationBar: Container(

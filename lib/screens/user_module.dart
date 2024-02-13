@@ -1,6 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
+import 'package:inventory_management/utils/custom_dropdown.dart';
 import 'package:inventory_management/utils/custome_button.dart';
+import 'package:inventory_management/utils/flutter_toast.dart';
 import 'package:inventory_management/utils/input_box.dart';
 
 class UserModule extends StatefulWidget {
@@ -11,14 +15,42 @@ class UserModule extends StatefulWidget {
 }
 
 class _UserModuleState extends State<UserModule> {
-  TextEditingController userNameText = TextEditingController();
+  TextEditingController userEmailText = TextEditingController();
 
   TextEditingController fullNameText = TextEditingController();
 
   TextEditingController passwordText = TextEditingController();
   TextEditingController rePasswordText = TextEditingController();
 
-  TextEditingController phoneText = TextEditingController();
+  TextEditingController userRole = TextEditingController();
+
+  void addUserToFirebase() async {
+    if (userEmailText.text.contains('@') &&
+        passwordText.text == rePasswordText.text) {
+      try {
+        final user = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+            email: userEmailText.text, password: passwordText.text);
+        if (user.user != null) {
+          await FirebaseFirestore.instance
+              .collection('users')
+              .doc(user.user!.uid)
+              .set({
+            'name': fullNameText.text,
+            'email': userEmailText.text,
+            'role': userRole.text
+          });
+          showToastMessage('User has been added');
+          if (context.mounted) {
+            Navigator.of(context).pop();
+          }
+        }
+      } catch (e) {
+        showToastMessage(e.toString());
+      }
+    } else {
+      showToastMessage('Invalid Input');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +58,14 @@ class _UserModuleState extends State<UserModule> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          customAppbar(),
-          SizedBox(
+          const customAppbar(),
+          const SizedBox(
             height: 20,
           ),
           Container(
             height: 35,
             color: const Color.fromARGB(255, 240, 21, 5),
-            child: Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
@@ -50,12 +82,12 @@ class _UserModuleState extends State<UserModule> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CustomInputBox(
-                controller: userNameText,
+                controller: fullNameText,
                 title: 'User Name',
               ),
               CustomInputBox(
-                controller: fullNameText,
-                title: ' Full Name',
+                controller: userEmailText,
+                title: 'User Email',
               ),
               CustomInputBox(
                 controller: passwordText,
@@ -65,18 +97,26 @@ class _UserModuleState extends State<UserModule> {
                 controller: rePasswordText,
                 title: 'Re-type Password',
               ),
-              CustomInputBox(
-                controller: phoneText,
-                title: 'Phone Number',
+              CustomDropDown(
+                options: const [
+                  'Supervisor',
+                  'Stock Manager',
+                  'Accountant',
+                ],
+                controller: userRole,
+                title: 'User Role',
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            customButton(
-              title: 'Save',
+            GestureDetector(
+              onTap: addUserToFirebase,
+              child: customButton(
+                title: 'Save',
+              ),
             ),
             SizedBox(
               width: 10,
