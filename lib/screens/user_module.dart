@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:inventory_management/screens/user_screen.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
 import 'package:inventory_management/utils/custom_dropdown.dart';
 import 'package:inventory_management/utils/custome_button.dart';
@@ -116,19 +117,28 @@ class _UserModuleState extends State<UserModule> {
               onTap: addUserToFirebase,
               child: customButton(
                 title: 'Save',
+                buttonColor: Colors.green,
               ),
             ),
             SizedBox(
               width: 10,
             ),
-            customButton(
-              title: 'Update',
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            customButton(
-              title: 'Clear',
+            // customButton(
+            //   title: 'Update',
+            // ),
+            // SizedBox(
+            //   width: 10,
+            // ),
+            GestureDetector(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => UserPage(),
+                  )),
+              child: customButton(
+                title: 'Cancle',
+                buttonColor: Colors.red,
+              ),
             )
           ])
         ],

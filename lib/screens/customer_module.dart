@@ -104,18 +104,32 @@ class _CustomerModuleState extends State<CustomerModule> {
           ),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             GestureDetector(
-                onTap: uploadToFirebase, child: customButton(title: 'Save')),
+                onTap: uploadToFirebase,
+                child: customButton(
+                  title: 'Save',
+                  buttonColor: Colors.green,
+                )),
             SizedBox(
               width: 10,
             ),
-            customButton(
-              title: 'Update',
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            customButton(
-              title: 'Clear',
+            // customButton(
+            //   title: 'Update',
+            // ),
+            // SizedBox(
+            //   width: 10,
+            // ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CustomerPage(),
+                    ));
+              },
+              child: customButton(
+                title: 'Cancel',
+                buttonColor: Colors.red,
+              ),
             )
           ])
         ],

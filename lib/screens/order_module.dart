@@ -328,11 +328,24 @@ class _OrderModuleState extends State<OrderModule> {
                               children: [
                                 GestureDetector(
                                     onTap: createOrder,
-                                    child: customButton(title: 'Order Insert')),
+                                    child: customButton(
+                                      title: 'Order Insert',
+                                      buttonColor: Colors.green,
+                                    )),
                                 const SizedBox(
                                   width: 20,
                                 ),
-                                customButton(title: 'clear'),
+                                GestureDetector(
+                                  onTap: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => OrderPage(),
+                                      )),
+                                  child: customButton(
+                                    title: 'Cancle',
+                                    buttonColor: Colors.red,
+                                  ),
+                                )
                               ],
                             ),
                           )

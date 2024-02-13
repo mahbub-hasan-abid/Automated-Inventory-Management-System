@@ -90,18 +90,31 @@ class _CategoriesModuleState extends State<CategoriesModule> {
           ),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             GestureDetector(
-                onTap: uploadToFirebase, child: customButton(title: 'Save')),
+                onTap: uploadToFirebase,
+                child: customButton(
+                  title: 'Save',
+                  buttonColor: Colors.green,
+                )),
             SizedBox(
               width: 10,
             ),
-            customButton(
-              title: 'Update',
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            customButton(
-              title: 'Clear',
+            // customButton(
+            //   buttonColor: Colors.green,
+            //   title: 'Update',
+            // ),
+            // SizedBox(
+            //   width: 10,
+            // ),
+            GestureDetector(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CategoriesPage(),
+                  )),
+              child: customButton(
+                buttonColor: Colors.red,
+                title: 'Cancel',
+              ),
             )
           ])
         ],
