@@ -86,79 +86,81 @@ class _ProductModuleState extends State<ProductModule> {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(child: CircularProgressIndicator());
             }
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const customAppbar(),
-                const SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  height: 35,
-                  color: const Color.fromARGB(255, 240, 21, 5),
-                  child: const Hero(
-                    tag: 'Product_page_to_module',
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Product Module',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                        ),
-                      ],
+            return SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const customAppbar(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    height: 35,
+                    color: const Color.fromARGB(255, 240, 21, 5),
+                    child: const Hero(
+                      tag: 'Product_page_to_module',
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Product Module',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    CustomInputBox(
-                      controller: productNameText,
-                      title: 'Product Name',
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      CustomInputBox(
+                        controller: productNameText,
+                        title: 'Product Name',
+                      ),
+                      CustomInputBox(
+                        controller: quantityText,
+                        title: ' Stock',
+                      ),
+                      CustomInputBox(
+                        controller: priceText,
+                        title: 'Price',
+                      ),
+                      CustomInputBox(
+                        controller: descriptionText,
+                        title: 'Description',
+                      ),
+                      CustomDropDown(
+                        options: allCat,
+                        title: 'Category',
+                        controller: categoryText,
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    GestureDetector(
+                        onTap: uploadToFirebase,
+                        child: customButton(title: 'Save')),
+                    SizedBox(
+                      width: 10,
                     ),
-                    CustomInputBox(
-                      controller: quantityText,
-                      title: ' Stock',
+                    customButton(
+                      title: 'Update',
                     ),
-                    CustomInputBox(
-                      controller: priceText,
-                      title: 'Price',
+                    SizedBox(
+                      width: 10,
                     ),
-                    CustomInputBox(
-                      controller: descriptionText,
-                      title: 'Description',
-                    ),
-                    CustomDropDown(
-                      options: allCat,
-                      title: 'Category',
-                      controller: categoryText,
+                    customButton(
+                      title: 'Clear',
                     )
-                  ],
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  GestureDetector(
-                      onTap: uploadToFirebase,
-                      child: customButton(title: 'Save')),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  customButton(
-                    title: 'Update',
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  customButton(
-                    title: 'Clear',
-                  )
-                ])
-              ],
+                  ])
+                ],
+              ),
             );
           }),
     );
