@@ -43,6 +43,7 @@ dependencies:
   pdf: ^3.10.7
   http: ^1.2.0
   intl: ^0.19.0
+  firebase_auth: ^4.17.4
 
 
 dev_dependencies:

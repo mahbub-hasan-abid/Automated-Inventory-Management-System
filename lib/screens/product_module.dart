@@ -96,9 +96,9 @@ class _ProductModuleState extends State<ProductModule> {
                 Container(
                   height: 35,
                   color: const Color.fromARGB(255, 240, 21, 5),
-                  child: Hero(
+                  child: const Hero(
                     tag: 'Product_page_to_module',
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
