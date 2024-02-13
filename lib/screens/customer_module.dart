@@ -120,11 +120,7 @@ class _CustomerModuleState extends State<CustomerModule> {
             // ),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CustomerPage(),
-                    ));
+                Navigator.pop(context);
               },
               child: customButton(
                 title: 'Cancel',

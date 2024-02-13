@@ -130,11 +130,7 @@ class _UserModuleState extends State<UserModule> {
             //   width: 10,
             // ),
             GestureDetector(
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => UserPage(),
-                  )),
+              onTap: () => Navigator.pop(context),
               child: customButton(
                 title: 'Cancle',
                 buttonColor: Colors.red,

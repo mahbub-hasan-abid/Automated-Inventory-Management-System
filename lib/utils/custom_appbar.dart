@@ -70,7 +70,7 @@ class customAppbar extends StatelessWidget {
               child: Column(
                 children: [
                   Image.asset('assets/product_50px.png'),
-                  Text('Product',
+                  Text('Products',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
                 ],
@@ -84,7 +84,7 @@ class customAppbar extends StatelessWidget {
               child: Column(
                 children: [
                   Image.asset('assets/user_50px.png'),
-                  Text('Customer',
+                  Text('Customers',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
                 ],

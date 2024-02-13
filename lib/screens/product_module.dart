@@ -159,11 +159,7 @@ class _ProductModuleState extends State<ProductModule> {
                     //   width: 10,
                     // ),
                     GestureDetector(
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ProductPage(),
-                          )),
+                      onTap: () => Navigator.pop(context),
                       child: customButton(
                         title: 'Cancel',
                         buttonColor: Colors.red,

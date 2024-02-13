@@ -336,11 +336,7 @@ class _OrderModuleState extends State<OrderModule> {
                                   width: 20,
                                 ),
                                 GestureDetector(
-                                  onTap: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => OrderPage(),
-                                      )),
+                                  onTap: () => Navigator.pop(context),
                                   child: customButton(
                                     title: 'Cancle',
                                     buttonColor: Colors.red,

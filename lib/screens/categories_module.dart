@@ -106,11 +106,7 @@ class _CategoriesModuleState extends State<CategoriesModule> {
             //   width: 10,
             // ),
             GestureDetector(
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CategoriesPage(),
-                  )),
+              onTap: () => Navigator.pop(context),
               child: customButton(
                 buttonColor: Colors.red,
                 title: 'Cancel',
