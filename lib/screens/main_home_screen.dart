@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       return cardMain(
                           name: 'Categories', number: response.length);
                     }),
-                cardMain(name: 'User', number: 57),
+                const cardMain(name: 'User', number: 57),
                 StreamBuilder(
                     stream: FirebaseFirestore.instance
                         .collection('orders')
