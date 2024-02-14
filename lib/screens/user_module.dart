@@ -64,7 +64,7 @@ class _UserModuleState extends State<UserModule> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const customAppbar(),
+              customAppbar(),
               const SizedBox(
                 height: 20,
               ),

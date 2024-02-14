@@ -148,7 +148,7 @@ class _OrderModuleState extends State<OrderModule> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const customAppbar(),
+                      customAppbar(),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(

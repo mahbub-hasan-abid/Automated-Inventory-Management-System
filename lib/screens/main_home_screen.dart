@@ -26,13 +26,13 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          color: Color.fromARGB(255, 154, 209, 235),
+          color: Color(0xFF7FFFD4),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const customAppbar(),
+                customAppbar(),
                 const SizedBox(
                   height: 50,
                 ),

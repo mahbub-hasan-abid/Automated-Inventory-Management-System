@@ -94,7 +94,7 @@ class _ProductModuleState extends State<ProductModule> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const customAppbar(),
+                    customAppbar(),
                     const SizedBox(
                       height: 20,
                     ),

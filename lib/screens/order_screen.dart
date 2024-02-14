@@ -24,7 +24,7 @@ class _OrderPageState extends State<OrderPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const customAppbar(),
+              customAppbar(),
               ListTile(
                 title: Container(
                   color: const Color.fromARGB(255, 2, 52, 94),
