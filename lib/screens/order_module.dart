@@ -144,20 +144,23 @@ class _OrderModuleState extends State<OrderModule> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const customAppbar(),
-                  Container(
-                      color: const Color.fromARGB(255, 240, 21, 5),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Order Module',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                        ],
-                      )),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                        color: const Color.fromARGB(255, 240, 21, 5),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Order Module',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            ),
+                          ],
+                        )),
+                  ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -330,7 +333,8 @@ class _OrderModuleState extends State<OrderModule> {
                                     onTap: createOrder,
                                     child: customButton(
                                       title: 'Order Insert',
-                                      buttonColor: Colors.green,
+                                      startingColor: Colors.green.shade300,
+                                      endColor: Colors.green.shade900,
                                     )),
                                 const SizedBox(
                                   width: 20,
@@ -339,7 +343,8 @@ class _OrderModuleState extends State<OrderModule> {
                                   onTap: () => Navigator.pop(context),
                                   child: customButton(
                                     title: 'Cancle',
-                                    buttonColor: Colors.red,
+                                    startingColor: Colors.red.shade900,
+                                    endColor: Colors.red.shade300,
                                   ),
                                 )
                               ],

@@ -52,7 +52,10 @@ class customAppbar extends StatelessWidget {
               },
               child: Column(
                 children: [
-                  Image.asset('assets/home_50px.png'),
+                  SizedBox(
+                      height: 70,
+                      width: 70,
+                      child: Image.asset('assets/home_iconfinder.png')),
                   Text('Home',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
@@ -69,7 +72,10 @@ class customAppbar extends StatelessWidget {
               },
               child: Column(
                 children: [
-                  Image.asset('assets/product_50px.png'),
+                  SizedBox(
+                      height: 70,
+                      width: 70,
+                      child: Image.asset('assets/product_home_iconfinder.png')),
                   Text('Products',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
@@ -83,7 +89,10 @@ class customAppbar extends StatelessWidget {
               },
               child: Column(
                 children: [
-                  Image.asset('assets/user_50px.png'),
+                  SizedBox(
+                      height: 70,
+                      width: 70,
+                      child: Image.asset('assets/customer_2_iconfinder.webp')),
                   Text('Customers',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
@@ -100,7 +109,10 @@ class customAppbar extends StatelessWidget {
               },
               child: Column(
                 children: [
-                  Image.asset('assets/categ_50px.png'),
+                  SizedBox(
+                      width: 70,
+                      height: 70,
+                      child: Image.asset('assets/categories_iconfinder.webp')),
                   Text('Categories',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
@@ -114,7 +126,10 @@ class customAppbar extends StatelessWidget {
               },
               child: Column(
                 children: [
-                  Image.asset('assets/customer_50px.png'),
+                  SizedBox(
+                      height: 70,
+                      width: 70,
+                      child: Image.asset('assets/users_iconfinder.png')),
                   Text('Users',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
@@ -131,7 +146,10 @@ class customAppbar extends StatelessWidget {
               },
               child: Column(
                 children: [
-                  Image.asset('assets/order_50px.png'),
+                  SizedBox(
+                      height: 70,
+                      width: 70,
+                      child: Image.asset('assets/order_iconfinder.png')),
                   Text('Orders',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))

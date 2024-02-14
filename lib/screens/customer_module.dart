@@ -107,7 +107,8 @@ class _CustomerModuleState extends State<CustomerModule> {
                 onTap: uploadToFirebase,
                 child: customButton(
                   title: 'Save',
-                  buttonColor: Colors.green,
+                  startingColor: Colors.green.shade300,
+                  endColor: Colors.green.shade900,
                 )),
             SizedBox(
               width: 10,
@@ -124,7 +125,8 @@ class _CustomerModuleState extends State<CustomerModule> {
               },
               child: customButton(
                 title: 'Cancel',
-                buttonColor: Colors.red,
+                startingColor: Colors.red.shade900,
+                endColor: Colors.red.shade300,
               ),
             )
           ])

@@ -15,9 +15,24 @@ class cardMain extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(40),
-          color: Color.fromARGB(255, 0, 0, 0),
-        ),
+            borderRadius: BorderRadius.circular(40),
+            color: Color.fromARGB(255, 0, 0, 0),
+            gradient: LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 25, 255, 5),
+                  const Color.fromARGB(255, 20, 45, 114)
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                transform: GradientRotation(90)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.blue.shade900,
+                offset: Offset(0, 3),
+                blurRadius: 6,
+                spreadRadius: 0,
+              ),
+            ]),
         height: 100,
         width: 150,
         child: Center(

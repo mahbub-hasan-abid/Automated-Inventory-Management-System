@@ -117,7 +117,8 @@ class _UserModuleState extends State<UserModule> {
               onTap: addUserToFirebase,
               child: customButton(
                 title: 'Save',
-                buttonColor: Colors.green,
+                startingColor: Colors.green.shade300,
+                endColor: Colors.green.shade900,
               ),
             ),
             SizedBox(
@@ -133,7 +134,8 @@ class _UserModuleState extends State<UserModule> {
               onTap: () => Navigator.pop(context),
               child: customButton(
                 title: 'Cancle',
-                buttonColor: Colors.red,
+                startingColor: Colors.red.shade900,
+                endColor: Colors.red.shade300,
               ),
             )
           ])

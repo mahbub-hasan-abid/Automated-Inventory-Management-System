@@ -93,7 +93,8 @@ class _CategoriesModuleState extends State<CategoriesModule> {
                 onTap: uploadToFirebase,
                 child: customButton(
                   title: 'Save',
-                  buttonColor: Colors.green,
+                  startingColor: Colors.green.shade300,
+                  endColor: Colors.green.shade900,
                 )),
             SizedBox(
               width: 10,
@@ -108,7 +109,8 @@ class _CategoriesModuleState extends State<CategoriesModule> {
             GestureDetector(
               onTap: () => Navigator.pop(context),
               child: customButton(
-                buttonColor: Colors.red,
+                startingColor: Colors.red.shade900,
+                endColor: Colors.red.shade300,
                 title: 'Cancel',
               ),
             )
