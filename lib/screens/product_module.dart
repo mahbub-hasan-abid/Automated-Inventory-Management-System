@@ -80,100 +80,103 @@ class _ProductModuleState extends State<ProductModule> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder(
-          future: loadCategories(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(child: CircularProgressIndicator());
-            }
-            return SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const customAppbar(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    height: 35,
-                    color: const Color.fromARGB(255, 240, 21, 5),
-                    child: const Hero(
-                      tag: 'Product_page_to_module',
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Product Module',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                        ],
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        color: Color.fromARGB(255, 154, 209, 235),
+        child: FutureBuilder(
+            future: loadCategories(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(child: CircularProgressIndicator());
+              }
+              return SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    customAppbar(),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      height: 35,
+                      color: const Color.fromARGB(255, 240, 21, 5),
+                      child: const Hero(
+                        tag: 'Product_page_to_module',
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Product Module',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      CustomInputBox(
-                        controller: productNameText,
-                        title: 'Product Name',
-                      ),
-                      CustomInputBox(
-                        controller: quantityText,
-                        title: ' Stock',
-                      ),
-                      CustomInputBox(
-                        controller: priceText,
-                        title: 'Price',
-                      ),
-                      CustomInputBox(
-                        controller: descriptionText,
-                        title: 'Description',
-                      ),
-                      CustomDropDown(
-                        options: allCat,
-                        title: 'Category',
-                        controller: categoryText,
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    GestureDetector(
-                        onTap: uploadToFirebase,
-                        child: customButton(
-                          title: 'Save',
-                          buttonColor: Colors.green,
-                        )),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        CustomInputBox(
+                          controller: productNameText,
+                          title: 'Product Name',
+                        ),
+                        CustomInputBox(
+                          controller: quantityText,
+                          title: ' Stock',
+                        ),
+                        CustomInputBox(
+                          controller: priceText,
+                          title: 'Price',
+                        ),
+                        CustomInputBox(
+                          controller: descriptionText,
+                          title: 'Description',
+                        ),
+                        CustomDropDown(
+                          options: allCat,
+                          title: 'Category',
+                          controller: categoryText,
+                        )
+                      ],
+                    ),
                     SizedBox(
-                      width: 10,
+                      height: 20,
                     ),
-                    // customButton(
-                    //   title: 'Update',
-                    // ),
-                    // SizedBox(
-                    //   width: 10,
-                    // ),
-                    GestureDetector(
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ProductPage(),
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      GestureDetector(
+                          onTap: uploadToFirebase,
+                          child: customButton(
+                            title: 'Save',
+                            startingColor: Colors.green.shade300,
+                            endColor: Colors.green.shade900,
                           )),
-                      child: customButton(
-                        title: 'Cancel',
-                        buttonColor: Colors.red,
+                      SizedBox(
+                        width: 10,
                       ),
-                    )
-                  ])
-                ],
-              ),
-            );
-          }),
+                      // customButton(
+                      //   title: 'Update',
+                      // ),
+                      // SizedBox(
+                      //   width: 10,
+                      // ),
+                      GestureDetector(
+                        onTap: () => Navigator.pop(context),
+                        child: customButton(
+                          title: 'Cancel',
+                          startingColor: Colors.red.shade900,
+                          endColor: Colors.red.shade300,
+                        ),
+                      )
+                    ])
+                  ],
+                ),
+              );
+            }),
+      ),
     );
   }
 }

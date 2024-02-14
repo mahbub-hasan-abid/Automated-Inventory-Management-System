@@ -59,80 +59,85 @@ class _CustomerModuleState extends State<CustomerModule> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          customAppbar(),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            height: 35,
-            color: const Color.fromARGB(255, 240, 21, 5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Customer Module',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
-              ],
-            ),
-          ),
-          Column(
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        color: Color.fromARGB(255, 154, 209, 235),
+        child: SingleChildScrollView(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CustomInputBox(
-                controller: customerNameText,
-                title: 'Full Name',
+              customAppbar(),
+              SizedBox(
+                height: 20,
               ),
-              CustomInputBox(
-                controller: phoneText,
-                title: 'Phone Number',
+              Container(
+                height: 35,
+                color: const Color.fromARGB(255, 240, 21, 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Customer Module',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),
+                  ],
+                ),
               ),
-              CustomInputBox(
-                controller: addressText,
-                title: 'Address',
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CustomInputBox(
+                    controller: customerNameText,
+                    title: 'Full Name',
+                  ),
+                  CustomInputBox(
+                    controller: phoneText,
+                    title: 'Phone Number',
+                  ),
+                  CustomInputBox(
+                    controller: addressText,
+                    title: 'Address',
+                  ),
+                ],
               ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                GestureDetector(
+                    onTap: uploadToFirebase,
+                    child: customButton(
+                      title: 'Save',
+                      startingColor: Colors.green.shade300,
+                      endColor: Colors.green.shade900,
+                    )),
+                SizedBox(
+                  width: 10,
+                ),
+                // customButton(
+                //   title: 'Update',
+                // ),
+                // SizedBox(
+                //   width: 10,
+                // ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: customButton(
+                    title: 'Cancel',
+                    startingColor: Colors.red.shade900,
+                    endColor: Colors.red.shade300,
+                  ),
+                )
+              ])
             ],
           ),
-          SizedBox(
-            height: 20,
-          ),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            GestureDetector(
-                onTap: uploadToFirebase,
-                child: customButton(
-                  title: 'Save',
-                  buttonColor: Colors.green,
-                )),
-            SizedBox(
-              width: 10,
-            ),
-            // customButton(
-            //   title: 'Update',
-            // ),
-            // SizedBox(
-            //   width: 10,
-            // ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CustomerPage(),
-                    ));
-              },
-              child: customButton(
-                title: 'Cancel',
-                buttonColor: Colors.red,
-              ),
-            )
-          ])
-        ],
+        ),
       ),
     );
   }

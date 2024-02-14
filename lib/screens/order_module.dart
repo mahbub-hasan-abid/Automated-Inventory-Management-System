@@ -134,227 +134,239 @@ class _OrderModuleState extends State<OrderModule> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder(
-          future: isLoaded,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(child: CircularProgressIndicator());
-            }
-            return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const customAppbar(),
-                  Container(
-                      color: const Color.fromARGB(255, 240, 21, 5),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Order Module',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                        ],
-                      )),
-                  Row(
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        color: Color.fromARGB(255, 154, 209, 235),
+        child: FutureBuilder(
+            future: isLoaded,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(child: CircularProgressIndicator());
+              }
+              return SingleChildScrollView(
+                child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      customAppbar(),
                       Padding(
-                        padding: const EdgeInsets.only(left: 20),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    borderRadius: BorderRadius.circular(35)),
-                                child: const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text(
-                                    'CUSTOMER',
-                                    style: TextStyle(
-                                      fontSize: 25,
-                                      color: Color.fromARGB(255, 255, 255, 255),
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                            color: const Color.fromARGB(255, 240, 21, 5),
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Order Module',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20),
+                                ),
+                              ],
+                            )),
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        borderRadius:
+                                            BorderRadius.circular(35)),
+                                    child: const Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: Text(
+                                        'CUSTOMER',
+                                        style: TextStyle(
+                                          fontSize: 25,
+                                          color: Color.fromARGB(
+                                              255, 255, 255, 255),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * .30,
+                                  child: CustomDropDown(
+                                    controller: customerSearchText,
+                                    options: customers
+                                        .map((e) => e.customerName)
+                                        .toList(),
+                                    title: 'Search',
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                CustomSearchBox(
+                                  controller: customerIdText,
+                                  title: 'Customer Id',
+                                  wd: .3,
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                CustomSearchBox(
+                                  controller: customerNameText,
+                                  title: 'Customer Name',
+                                  wd: .3,
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                CustomSearchBox(
+                                  controller: customerAddressText,
+                                  title: 'Customer Address',
+                                  wd: .3,
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 40,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.black,
+                                      borderRadius: BorderRadius.circular(35)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      'PRODUCT',
+                                      style: TextStyle(
+                                        fontSize: 30,
+                                        color: const Color.fromARGB(
+                                            255, 255, 255, 255),
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width * .30,
-                              child: CustomDropDown(
-                                controller: customerSearchText,
-                                options: customers
-                                    .map((e) => e.customerName)
-                                    .toList(),
-                                title: 'Search',
+
+                              //under the product text   2 colums in 1 row
+
+                              Container(
+                                width: MediaQuery.of(context).size.width * .65,
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Expanded(
+                                      flex: 1,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          CustomDropDown(
+                                            controller: productSearchText,
+                                            title: 'Search',
+                                            options: products
+                                                .map((e) => e.productName)
+                                                .toList(),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          CustomInputBox(
+                                              controller: productIdText,
+                                              title: 'Product ID'),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
+                                          CustomInputBox(
+                                              controller: productNameText,
+                                              title: "Product Name"),
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 20,
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Column(
+                                        children: [
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          CustomInputBox(
+                                              controller: priceText,
+                                              title: 'Price'),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          CustomInputBox(
+                                              controller: quantityText,
+                                              title: "Quantity"),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
+                                          CustomInputBox(
+                                              controller: totalText,
+                                              title: "Total"),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            CustomSearchBox(
-                              controller: customerIdText,
-                              title: 'Customer Id',
-                              wd: .3,
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            CustomSearchBox(
-                              controller: customerNameText,
-                              title: 'Customer Name',
-                              wd: .3,
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            CustomSearchBox(
-                              controller: customerAddressText,
-                              title: 'Customer Address',
-                              wd: .3,
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 40,
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(35)),
-                              child: Padding(
+                              SizedBox(
+                                height: 40,
+                              ),
+
+                              Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'PRODUCT',
-                                  style: TextStyle(
-                                    fontSize: 30,
-                                    color: const Color.fromARGB(
-                                        255, 255, 255, 255),
-                                  ),
+                                child: Row(
+                                  children: [
+                                    GestureDetector(
+                                        onTap: createOrder,
+                                        child: customButton(
+                                          title: 'Order Insert',
+                                          startingColor: Colors.green.shade300,
+                                          endColor: Colors.green.shade900,
+                                        )),
+                                    const SizedBox(
+                                      width: 20,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () => Navigator.pop(context),
+                                      child: customButton(
+                                        title: 'Cancle',
+                                        startingColor: Colors.red.shade900,
+                                        endColor: Colors.red.shade300,
+                                      ),
+                                    )
+                                  ],
                                 ),
-                              ),
-                            ),
+                              )
+                            ],
                           ),
-
-                          //under the product text   2 colums in 1 row
-
-                          Container(
-                            width: MediaQuery.of(context).size.width * .65,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(
-                                  flex: 1,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      CustomDropDown(
-                                        controller: productSearchText,
-                                        title: 'Search',
-                                        options: products
-                                            .map((e) => e.productName)
-                                            .toList(),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      CustomInputBox(
-                                          controller: productIdText,
-                                          title: 'Product ID'),
-                                      SizedBox(
-                                        height: 20,
-                                      ),
-                                      CustomInputBox(
-                                          controller: productNameText,
-                                          title: "Product Name"),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 20,
-                                ),
-                                Expanded(
-                                  flex: 1,
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      CustomInputBox(
-                                          controller: priceText,
-                                          title: 'Price'),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      CustomInputBox(
-                                          controller: quantityText,
-                                          title: "Quantity"),
-                                      SizedBox(
-                                        height: 20,
-                                      ),
-                                      CustomInputBox(
-                                          controller: totalText,
-                                          title: "Total"),
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 40,
-                          ),
-
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              children: [
-                                GestureDetector(
-                                    onTap: createOrder,
-                                    child: customButton(
-                                      title: 'Order Insert',
-                                      buttonColor: Colors.green,
-                                    )),
-                                const SizedBox(
-                                  width: 20,
-                                ),
-                                GestureDetector(
-                                  onTap: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => OrderPage(),
-                                      )),
-                                  child: customButton(
-                                    title: 'Cancle',
-                                    buttonColor: Colors.red,
-                                  ),
-                                )
-                              ],
-                            ),
-                          )
                         ],
                       ),
-                    ],
-                  ),
-                ]);
-          }),
+                    ]),
+              );
+            }),
+      ),
     );
   }
 }

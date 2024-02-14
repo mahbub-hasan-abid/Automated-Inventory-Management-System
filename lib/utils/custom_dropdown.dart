@@ -41,16 +41,18 @@ class _CustomDropDownState extends State<CustomDropDown> {
               )),
           Expanded(
             flex: 17,
-            child: DropdownButton<String>(
+            child: DropdownButtonFormField<String>(
               value: selectedValue,
               icon: const Icon(Icons.arrow_drop_down),
               iconSize: 24,
               elevation: 16,
-              style: const TextStyle(fontSize: 15),
-              underline: Container(
-                height: 1,
-                color: Colors.grey,
-              ),
+              style: const TextStyle(fontSize: 9),
+              decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Color.fromARGB(255, 223, 220, 213),
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(10))),
               onChanged: (String? newValue) {
                 setState(() {
                   selectedValue = newValue!;
@@ -61,7 +63,10 @@ class _CustomDropDownState extends State<CustomDropDown> {
                   widget.options.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
-                  child: Text(value),
+                  child: Text(
+                    value,
+                    style: TextStyle(fontSize: 14),
+                  ),
                 );
               }).toList(),
             ),

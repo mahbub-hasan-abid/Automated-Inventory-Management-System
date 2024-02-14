@@ -23,109 +23,117 @@ class _CategoriesPageState extends State<CategoriesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          customAppbar(),
-          ListTile(
-            title: Container(
-              color: const Color.fromARGB(255, 2, 52, 94),
-              child: const Row(
-                children: [
-                  Expanded(
-                      flex: 2,
-                      child: Text(
-                        '     No',
-                        style: TextStyle(color: Colors.white),
-                      )),
-                  Expanded(
-                      flex: 2,
-                      child: Text(
-                        'Category ID',
-                        style: TextStyle(color: Colors.white),
-                      )),
-                  Expanded(
-                      flex: 10,
-                      child: Text(
-                        'Name',
-                        style: TextStyle(color: Colors.white),
-                      )),
-                  Expanded(
-                      flex: 1,
-                      child: Text(
-                        'Edit ',
-                        style: TextStyle(color: Colors.white),
-                      )),
-                  Expanded(
-                      flex: 1,
-                      child: Text(
-                        'Delete',
-                        style: TextStyle(color: Colors.white),
-                      ))
-                ],
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        color: Color.fromARGB(255, 154, 209, 235),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              customAppbar(),
+              ListTile(
+                title: Container(
+                  color: const Color.fromARGB(255, 2, 52, 94),
+                  child: const Row(
+                    children: [
+                      Expanded(
+                          flex: 2,
+                          child: Text(
+                            '     No',
+                            style: TextStyle(color: Colors.white),
+                          )),
+                      Expanded(
+                          flex: 2,
+                          child: Text(
+                            'Category ID',
+                            style: TextStyle(color: Colors.white),
+                          )),
+                      Expanded(
+                          flex: 10,
+                          child: Text(
+                            'Name',
+                            style: TextStyle(color: Colors.white),
+                          )),
+                      Expanded(
+                          flex: 1,
+                          child: Text(
+                            'Edit ',
+                            style: TextStyle(color: Colors.white),
+                          )),
+                      Expanded(
+                          flex: 1,
+                          child: Text(
+                            'Delete',
+                            style: TextStyle(color: Colors.white),
+                          ))
+                    ],
+                  ),
+                ),
               ),
-            ),
-          ),
 
-          //data will input here from databae
-          StreamBuilder(
-            stream:
-                FirebaseFirestore.instance.collection('categories').snapshots(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(child: CircularProgressIndicator());
-              }
-              final fetchedData = snapshot.data!.docs;
+              //data will input here from databae
+              StreamBuilder(
+                stream: FirebaseFirestore.instance
+                    .collection('categories')
+                    .snapshots(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Center(child: CircularProgressIndicator());
+                  }
+                  final fetchedData = snapshot.data!.docs;
 
-              return ListView.builder(
-                shrinkWrap: true,
-                itemCount: fetchedData.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Row(
-                      children: [
-                        Expanded(
-                            flex: 2,
-                            child: Text(
-                              '     $index',
-                              //   style: TextStyle(color: Colors.white),
-                            )),
-                        Expanded(
-                            flex: 2,
-                            child: Text(
-                              fetchedData[index]['id'],
-                              // style: TextStyle(color: Colors.white),
-                            )),
-                        Expanded(
-                            flex: 10,
-                            child: Text(
-                              fetchedData[index]['name'],
-                              //   style: TextStyle(color: Colors.white),
-                            )),
-                        Expanded(
-                            flex: 1,
-                            child: Text(
-                              'Edit ',
-                              // style: TextStyle(color: Colors.white),
-                            )),
-                        GestureDetector(
-                          onTap: () {
-                            deleteCustomer(fetchedData[index].id);
-                          },
-                          child: Expanded(
-                              flex: 1,
-                              child: Text(
-                                'Delete',
-                                //  style: TextStyle(color: Colors.white),
-                              )),
-                        )
-                      ],
-                    ),
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: fetchedData.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        title: Row(
+                          children: [
+                            Expanded(
+                                flex: 2,
+                                child: Text(
+                                  '     $index',
+                                  //   style: TextStyle(color: Colors.white),
+                                )),
+                            Expanded(
+                                flex: 2,
+                                child: Text(
+                                  fetchedData[index]['id'],
+                                  // style: TextStyle(color: Colors.white),
+                                )),
+                            Expanded(
+                                flex: 10,
+                                child: Text(
+                                  fetchedData[index]['name'],
+                                  //   style: TextStyle(color: Colors.white),
+                                )),
+                            Expanded(
+                                flex: 1,
+                                child: Text(
+                                  'Edit ',
+                                  // style: TextStyle(color: Colors.white),
+                                )),
+                            GestureDetector(
+                              onTap: () {
+                                deleteCustomer(fetchedData[index].id);
+                              },
+                              child: Expanded(
+                                  flex: 1,
+                                  child: Text(
+                                    'Delete',
+                                    //  style: TextStyle(color: Colors.white),
+                                  )),
+                            )
+                          ],
+                        ),
+                      );
+                    },
                   );
                 },
-              );
-            },
-          )
-        ],
+              )
+            ],
+          ),
+        ),
       ),
       bottomNavigationBar: Container(
         height: 50,
