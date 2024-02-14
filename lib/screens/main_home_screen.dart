@@ -97,7 +97,22 @@ class _HomeScreenState extends State<HomeScreen> {
                               return cardMain(
                                   name: 'Categories', number: response.length);
                             }),
-                        const cardMain(name: 'Users', number: 57),
+                        StreamBuilder(
+                            stream: FirebaseFirestore.instance
+                                .collection('users')
+                                .snapshots(),
+                            builder: (context, snapshot) {
+                              if (snapshot.connectionState ==
+                                  ConnectionState.waiting) {
+                                return const Center(
+                                  child: CircularProgressIndicator(),
+                                );
+                              }
+                              final response = snapshot.data!.docs;
+
+                              return cardMain(
+                                  name: 'Users', number: response.length);
+                            }),
                         StreamBuilder(
                             stream: FirebaseFirestore.instance
                                 .collection('orders')
