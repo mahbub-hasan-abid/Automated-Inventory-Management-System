@@ -21,6 +21,23 @@ class _OrderPageState extends State<OrderPage> {
         child: Column(
           children: [
             const customAppbar(),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                onPressed: () {},
+                icon: Icon(
+                  Icons.add,
+                  color: Colors.white,
+                ),
+                label: Text(
+                  "New Order",
+                  style: TextStyle(color: Colors.white),
+                )),
+            const SizedBox(
+              height: 10,
+            ),
             ListTile(
               title: Container(
                 color: const Color.fromARGB(255, 2, 52, 94),

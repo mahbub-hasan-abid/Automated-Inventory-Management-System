@@ -1,9 +1,10 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/utils/card_main.dart';
 import 'package:inventory_management/utils/chart.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
-import 'package:inventory_management/utils/generate_pdf.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,6 +14,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int productvalue = 0;
+
+  void reloadState() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,8 +46,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       }
                       final response = snapshot.data!.docs;
+                      productvalue = response.length;
 
-                      return cardMain(name: 'Product', number: response.length);
+                      return cardMain(name: 'Product', number: productvalue);
                     }),
                 StreamBuilder(
                     stream: FirebaseFirestore.instance
@@ -98,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(30))),
                 height: 400,
                 child: BarChartSample1(
-                  product_value: 974,
+                  product_value: productvalue,
                   customer_value: 1274,
                   categories_value: 37,
                   user_value: 57,
