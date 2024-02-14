@@ -56,90 +56,97 @@ class _UserModuleState extends State<UserModule> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const customAppbar(),
-          const SizedBox(
-            height: 20,
-          ),
-          Container(
-            height: 35,
-            color: const Color.fromARGB(255, 240, 21, 5),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'User Module',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
-              ],
-            ),
-          ),
-          Column(
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        color: Color.fromARGB(255, 154, 209, 235),
+        child: SingleChildScrollView(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CustomInputBox(
-                controller: fullNameText,
-                title: 'User Name',
+              const customAppbar(),
+              const SizedBox(
+                height: 20,
               ),
-              CustomInputBox(
-                controller: userEmailText,
-                title: 'User Email',
+              Container(
+                height: 35,
+                color: const Color.fromARGB(255, 240, 21, 5),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'User Module',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),
+                  ],
+                ),
               ),
-              CustomInputBox(
-                controller: passwordText,
-                title: 'Password ',
-              ),
-              CustomInputBox(
-                controller: rePasswordText,
-                title: 'Re-type Password',
-              ),
-              CustomDropDown(
-                options: const [
-                  'Supervisor',
-                  'Stock Manager',
-                  'Accountant',
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CustomInputBox(
+                    controller: fullNameText,
+                    title: 'User Name',
+                  ),
+                  CustomInputBox(
+                    controller: userEmailText,
+                    title: 'User Email',
+                  ),
+                  CustomInputBox(
+                    controller: passwordText,
+                    title: 'Password ',
+                  ),
+                  CustomInputBox(
+                    controller: rePasswordText,
+                    title: 'Re-type Password',
+                  ),
+                  CustomDropDown(
+                    options: const [
+                      'Supervisor',
+                      'Stock Manager',
+                      'Accountant',
+                    ],
+                    controller: userRole,
+                    title: 'User Role',
+                  ),
                 ],
-                controller: userRole,
-                title: 'User Role',
               ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                GestureDetector(
+                  onTap: addUserToFirebase,
+                  child: customButton(
+                    title: 'Save',
+                    startingColor: Colors.green.shade300,
+                    endColor: Colors.green.shade900,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                // customButton(
+                //   title: 'Update',
+                // ),
+                // SizedBox(
+                //   width: 10,
+                // ),
+                GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: customButton(
+                    title: 'Cancle',
+                    startingColor: Colors.red.shade900,
+                    endColor: Colors.red.shade300,
+                  ),
+                )
+              ])
             ],
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            GestureDetector(
-              onTap: addUserToFirebase,
-              child: customButton(
-                title: 'Save',
-                startingColor: Colors.green.shade300,
-                endColor: Colors.green.shade900,
-              ),
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            // customButton(
-            //   title: 'Update',
-            // ),
-            // SizedBox(
-            //   width: 10,
-            // ),
-            GestureDetector(
-              onTap: () => Navigator.pop(context),
-              child: customButton(
-                title: 'Cancle',
-                startingColor: Colors.red.shade900,
-                endColor: Colors.red.shade300,
-              ),
-            )
-          ])
-        ],
+        ),
       ),
     );
   }

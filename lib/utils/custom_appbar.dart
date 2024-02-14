@@ -52,10 +52,17 @@ class customAppbar extends StatelessWidget {
               },
               child: Column(
                 children: [
-                  SizedBox(
-                      height: 70,
-                      width: 70,
-                      child: Image.asset('assets/home_iconfinder.png')),
+                  Container(
+                      height: 80,
+                      width: 80,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 95, 182, 116),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset('assets/home_iconfinder.png'),
+                      )),
                   Text('Home',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
@@ -72,10 +79,17 @@ class customAppbar extends StatelessWidget {
               },
               child: Column(
                 children: [
-                  SizedBox(
-                      height: 70,
-                      width: 70,
-                      child: Image.asset('assets/product_home_iconfinder.png')),
+                  Container(
+                      height: 80,
+                      width: 80,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 95, 182, 116),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset(
+                              'assets/product_home_iconfinder.png'))),
                   Text('Products',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
@@ -89,10 +103,17 @@ class customAppbar extends StatelessWidget {
               },
               child: Column(
                 children: [
-                  SizedBox(
-                      height: 70,
-                      width: 70,
-                      child: Image.asset('assets/customer_2_iconfinder.webp')),
+                  Container(
+                      height: 80,
+                      width: 80,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 95, 182, 116),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset(
+                              'assets/customer_2_iconfinder.webp'))),
                   Text('Customers',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
@@ -109,10 +130,17 @@ class customAppbar extends StatelessWidget {
               },
               child: Column(
                 children: [
-                  SizedBox(
-                      width: 70,
-                      height: 70,
-                      child: Image.asset('assets/categories_iconfinder.webp')),
+                  Container(
+                      height: 80,
+                      width: 80,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 95, 182, 116),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset(
+                              'assets/categories_iconfinder.webp'))),
                   Text('Categories',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
@@ -126,10 +154,16 @@ class customAppbar extends StatelessWidget {
               },
               child: Column(
                 children: [
-                  SizedBox(
-                      height: 70,
-                      width: 70,
-                      child: Image.asset('assets/users_iconfinder.png')),
+                  Container(
+                      height: 80,
+                      width: 80,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 95, 182, 116),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset('assets/users_iconfinder.png'))),
                   Text('Users',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
@@ -146,10 +180,16 @@ class customAppbar extends StatelessWidget {
               },
               child: Column(
                 children: [
-                  SizedBox(
-                      height: 70,
-                      width: 70,
-                      child: Image.asset('assets/order_iconfinder.png')),
+                  Container(
+                      height: 80,
+                      width: 80,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 95, 182, 116),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset('assets/order_iconfinder.png'))),
                   Text('Orders',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
