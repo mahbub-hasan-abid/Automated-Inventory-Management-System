@@ -46,7 +46,7 @@ class _ProductModuleState extends State<ProductModule> {
         descriptionText.text.isEmpty ||
         categoryText.text.isEmpty ||
         priceText.text.isEmpty) {
-      showToastMessage('Please input first');
+      showToastMessage('Please input first', context, false);
       return;
     }
     await FirebaseFirestore.instance.collection('products').add({
@@ -57,7 +57,7 @@ class _ProductModuleState extends State<ProductModule> {
       'description': descriptionText.text,
       'category': categoryText.text
     });
-    showToastMessage('Product added!');
+    showToastMessage('Product added!', context, true);
 
     if (context.mounted) {
       Navigator.push(

@@ -27,7 +27,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 40,
+      height: 50,
       width: MediaQuery.of(context).size.width * .40,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,

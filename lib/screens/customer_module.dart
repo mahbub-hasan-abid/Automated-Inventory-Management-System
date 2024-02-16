@@ -39,7 +39,7 @@ class _CustomerModuleState extends State<CustomerModule> {
     if (customerNameText.text.isEmpty ||
         phoneText.text.isEmpty ||
         addressText.text.isEmpty) {
-      showToastMessage('Please input first');
+      showToastMessage('Please input first', context, false);
       return;
     }
     await FirebaseFirestore.instance.collection('customers').add({
@@ -48,7 +48,7 @@ class _CustomerModuleState extends State<CustomerModule> {
       'phone': phoneText.text,
       'address': addressText.text
     });
-    showToastMessage('Customer added!');
+    showToastMessage('Customer added!', context, true);
 
     if (context.mounted) {
       Navigator.push(
