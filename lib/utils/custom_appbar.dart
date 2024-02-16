@@ -4,6 +4,7 @@ import 'package:inventory_management/screens/customer_screen.dart';
 import 'package:inventory_management/screens/main_home_screen.dart';
 import 'package:inventory_management/screens/order_screen.dart';
 import 'package:inventory_management/screens/product_screen.dart';
+import 'package:inventory_management/screens/transaction_screen.dart';
 import 'package:inventory_management/screens/user_screen.dart';
 
 class customAppbar extends StatefulWidget {
@@ -232,6 +233,42 @@ class _customAppbarState extends State<customAppbar> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
+                      builder: (context) => TransactionPage(),
+                    ))
+              },
+              child: Column(
+                children: [
+                  MouseRegion(
+                    onEnter: (_) => setState(() => order_isHovered = true),
+                    onExit: (_) {
+                      setState(() {
+                        order_isHovered = false;
+                      });
+                    },
+                    child: AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        width: order_isHovered ? 100 : 80,
+                        height: order_isHovered ? 100 : 80,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 95, 182, 116),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Image.asset(
+                                'assets/transaction_2_iconfinder.png'))),
+                  ),
+                  Text('Transaction',
+                      style:
+                          TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
+                ],
+              ), // Replace with your image path
+            ),
+            InkWell(
+              onTap: () => {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
                       builder: (context) => OrderPage(),
                     ))
               },
@@ -256,7 +293,7 @@ class _customAppbarState extends State<customAppbar> {
                             padding: const EdgeInsets.all(8.0),
                             child: Image.asset('assets/order_iconfinder.png'))),
                   ),
-                  Text('e',
+                  Text('Orders',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
                 ],

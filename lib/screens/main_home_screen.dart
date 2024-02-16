@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          color: Color(0xFF7FFFD4),
+          color: Color.fromARGB(255, 154, 209, 235),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -151,39 +151,103 @@ class _HomeScreenState extends State<HomeScreen> {
                               order_value: 74,
                             )),
                         Column(children: [
-                          CustomContaineBox(
-                            startingColor: Colors.blue.shade200,
-                            endColor: Colors.blue.shade900,
-                            text: 'Add Product',
-                            imageUrl: "assets/product_iconfinder.webp",
-                            page: ProductModule(),
+                          Row(
+                            children: [
+                              Text(
+                                'Quick Buttons',
+                                style: TextStyle(
+                                    fontSize: 35,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ],
                           ),
-                          CustomContaineBox(
-                              startingColor: Colors.green.shade200,
-                              endColor: Colors.green.shade900,
-                              page: CustomerModule(),
-                              text: "Add Customer",
-                              imageUrl: "assets/customer2_iconfinder.png"),
-                          CustomContaineBox(
-                              startingColor: Colors.yellowAccent.shade200,
-                              endColor: Colors.yellow.shade900,
-                              page: CategoriesModule(),
-                              text: "Add Category",
-                              imageUrl: "assets/caterories_2_iconfinder.png"),
-                          CustomContaineBox(
-                              startingColor: Colors.red.shade200,
-                              endColor: Colors.red.shade900,
-                              page: UserModule(),
-                              text: "Add Users",
-                              imageUrl: "assets/users_2_iconfinder.png"),
-                          CustomContaineBox(
-                              endColor:
-                                  const Color.fromARGB(255, 255, 255, 255),
-                              startingColor:
-                                  const Color.fromARGB(255, 87, 1, 47),
-                              page: OrderModule(),
-                              text: "Add Orders",
-                              imageUrl: "assets/order_2_iconfinder.png"),
+                          Container(
+                            height: 5,
+                            width: MediaQuery.of(context).size.width * .5,
+                            color: Colors.black,
+                          ),
+                          Row(
+                            children: [
+                              Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: CustomContaineBox(
+                                      startingColor: Colors.blue.shade200,
+                                      endColor: Colors.blue.shade900,
+                                      text: 'Add Product',
+                                      imageUrl:
+                                          "assets/product_iconfinder.webp",
+                                      page: ProductModule(),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: CustomContaineBox(
+                                        startingColor: Colors.green.shade200,
+                                        endColor: Colors.green.shade900,
+                                        page: CustomerModule(),
+                                        text: "Add Customer",
+                                        imageUrl:
+                                            "assets/customer2_iconfinder.png"),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: CustomContaineBox(
+                                        startingColor:
+                                            Colors.yellowAccent.shade200,
+                                        endColor: Colors.yellow.shade900,
+                                        page: CategoriesModule(),
+                                        text: "Add Category",
+                                        imageUrl:
+                                            "assets/caterories_2_iconfinder.png"),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                width: 30,
+                              ),
+                              Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: CustomContaineBox(
+                                        startingColor: Colors.red.shade200,
+                                        endColor: Colors.red.shade900,
+                                        page: UserModule(),
+                                        text: "Add Users",
+                                        imageUrl:
+                                            "assets/users_2_iconfinder.png"),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: CustomContaineBox(
+                                        endColor: const Color.fromARGB(
+                                            255, 255, 255, 255),
+                                        startingColor:
+                                            Color.fromARGB(255, 15, 235, 95),
+                                        page: OrderModule(),
+                                        text: "Add Translation",
+                                        imageUrl:
+                                            "assets/transaction_iconfinder.webp"),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: CustomContaineBox(
+                                        endColor: const Color.fromARGB(
+                                            255, 255, 255, 255),
+                                        startingColor:
+                                            Color.fromARGB(255, 78, 2, 76),
+                                        page: OrderModule(),
+                                        text: "Add Orders",
+                                        imageUrl:
+                                            "assets/order_2_iconfinder.png"),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ]),
                       ],
                     ),

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:inventory_management/firebase_options.dart';
 
 import 'package:inventory_management/screens/main_home_screen.dart';
+import 'package:inventory_management/screens/transaction_module.dart';
+import 'package:inventory_management/screens/transaction_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
