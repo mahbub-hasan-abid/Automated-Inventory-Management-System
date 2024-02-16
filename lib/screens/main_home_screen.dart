@@ -6,6 +6,7 @@ import 'package:inventory_management/screens/categories_module.dart';
 import 'package:inventory_management/screens/customer_module.dart';
 import 'package:inventory_management/screens/order_module.dart';
 import 'package:inventory_management/screens/product_module.dart';
+import 'package:inventory_management/screens/transaction_module.dart';
 import 'package:inventory_management/screens/user_module.dart';
 import 'package:inventory_management/utils/card_main.dart';
 import 'package:inventory_management/utils/chart.dart';
@@ -227,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             255, 255, 255, 255),
                                         startingColor:
                                             Color.fromARGB(255, 15, 235, 95),
-                                        page: OrderModule(),
+                                        page: TransactionModule(),
                                         text: "Add Translation",
                                         imageUrl:
                                             "assets/transaction_iconfinder.webp"),
