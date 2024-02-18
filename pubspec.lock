@@ -41,6 +41,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.6"
+  battery:
+    dependency: "direct main"
+    description:
+      name: battery
+      sha256: "7486c0707d6f24d0cc610791927eb05b6cca4ef1aaaeecafcbf3f4e2931f30b9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.3"
+  battery_platform_interface:
+    dependency: transitive
+    description:
+      name: battery_platform_interface
+      sha256: "40becf6f0719725e825afb5360954cea5642e94dbd3ee75af5160ea26dfbf2d3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.1"
   bidi:
     dependency: transitive
     description:
