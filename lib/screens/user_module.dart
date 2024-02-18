@@ -40,16 +40,16 @@ class _UserModuleState extends State<UserModule> {
             'email': userEmailText.text,
             'role': userRole.text
           });
-          showToastMessage('User has been added');
+          showToastMessage('User has been added', context, true);
           if (context.mounted) {
             Navigator.of(context).pop();
           }
         }
       } catch (e) {
-        showToastMessage(e.toString());
+        showToastMessage(e.toString(), context, false);
       }
     } else {
-      showToastMessage('Invalid Input');
+      showToastMessage('Invalid Input', context, false);
     }
   }
 

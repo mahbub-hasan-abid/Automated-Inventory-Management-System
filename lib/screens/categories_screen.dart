@@ -17,7 +17,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
         .collection('categories')
         .doc(docID)
         .delete();
-    showToastMessage('Category deleted');
+    showToastMessage('Category deleted', context, true);
   }
 
   @override

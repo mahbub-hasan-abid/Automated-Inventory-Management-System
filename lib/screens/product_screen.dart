@@ -14,7 +14,7 @@ class ProductPage extends StatefulWidget {
 class _ProductPageState extends State<ProductPage> {
   Future<void> deleteProduct(String docID) async {
     await FirebaseFirestore.instance.collection('products').doc(docID).delete();
-    showToastMessage('Items has been deleted');
+    showToastMessage('Items has been deleted', context, true);
   }
 
   @override

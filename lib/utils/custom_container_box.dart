@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:inventory_management/screens/product_module.dart';
 
 class CustomContaineBox extends StatelessWidget {
   CustomContaineBox({
@@ -37,18 +36,18 @@ class CustomContaineBox extends StatelessWidget {
                   colors: [startingColor, endColor],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  transform: GradientRotation(180)),
+                  transform: const GradientRotation(180)),
               boxShadow: [
                 BoxShadow(
                   color: Colors.blue.shade900,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                   blurRadius: 6,
                   spreadRadius: 0,
                 ),
               ],
             ),
             height: 80,
-            width: 300,
+            width: 350,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
@@ -59,8 +58,8 @@ class CustomContaineBox extends StatelessWidget {
                     padding: const EdgeInsets.all(14.0),
                     child: Text(
                       text,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 25),
                     ),
                   ),
                 ],

@@ -66,7 +66,8 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomePage()));
                   } else {
-                    showToastMessage('Invalid username or password');
+                    showToastMessage(
+                        'Invalid username or password', context, false);
                   }
                 },
                 child: const Text('Login'),

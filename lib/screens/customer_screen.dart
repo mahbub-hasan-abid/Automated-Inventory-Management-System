@@ -17,7 +17,7 @@ class _CustomerPageState extends State<CustomerPage> {
         .collection('customers')
         .doc(docID)
         .delete();
-    showToastMessage('Customer deleted');
+    showToastMessage('Customer deleted', context, true);
   }
 
   @override

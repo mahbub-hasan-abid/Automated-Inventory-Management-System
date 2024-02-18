@@ -49,7 +49,7 @@ class _OrderModuleState extends State<OrderModule> {
 
   void createOrder() async {
     if (customerNameText.text.isEmpty || productNameText.text.isEmpty) {
-      showToastMessage('Please input first');
+      showToastMessage('Please input first', context, false);
 
       return;
     }
@@ -63,7 +63,7 @@ class _OrderModuleState extends State<OrderModule> {
       'price': priceText.text,
       'total': totalText.text,
     });
-    showToastMessage('Order has been created');
+    showToastMessage('Order has been created', context, true);
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => OrderPage()));
   }

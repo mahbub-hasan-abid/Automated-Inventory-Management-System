@@ -34,13 +34,13 @@ class _CategoriesModuleState extends State<CategoriesModule> {
 
   void uploadToFirebase() async {
     if (categoryNameText.text.isEmpty) {
-      showToastMessage('Please input first');
+      showToastMessage('Please input first', context, false);
       return;
     }
     await FirebaseFirestore.instance
         .collection('categories')
         .add({'name': categoryNameText.text, 'id': generateRandomID()});
-    showToastMessage('Category added!');
+    showToastMessage('Category added!', context, true);
     setState(() {
       categoryNameText.text = '';
     });
