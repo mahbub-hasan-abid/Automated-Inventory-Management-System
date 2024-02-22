@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:inventory_management/firebase_options.dart';
 
 import 'package:inventory_management/screens/main_home_screen.dart';
+import 'package:inventory_management/screens/splash_screen.dart';
 import 'package:inventory_management/screens/transaction_module.dart';
 import 'package:inventory_management/screens/transaction_screen.dart';
 import 'package:oktoast/oktoast.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: OKToast(child: Scaffold(body: const HomeScreen())));
+        home: OKToast(child: Scaffold(body: SplashScreen() )))
+        ;
   }
 }
