@@ -12,66 +12,73 @@ class _CustomDrawerState extends State<CustomDrawer> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          padding: EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image.asset(
-                'assets/logo2.png',
-                fit: BoxFit.cover,
-              ),
-              const SizedBox(height: 15),
-              const Text(
-                'Khan Sons and Textile',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * .15,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(
+            height: 40,
           ),
-        ),
-        const SizedBox(height: 60),
-        buildOptionTile(
-          'Home',
-          'assets/home_iconfinder.png',
-        ),
-        SizedBox(height: 15),
-        buildOptionTile(
-          'Products',
-          'assets/product_home_iconfinder.png',
-        ),
-        SizedBox(height: 15),
-        buildOptionTile(
-          'Customer',
-          'assets/customer_2_iconfinder.webp',
-        ),
-        SizedBox(height: 15),
-        buildOptionTile(
-          'Categories',
-          'assets/categories_iconfinder.webp',
-        ),
-        SizedBox(height: 15),
-        buildOptionTile(
-          'Users',
-          'assets/users_iconfinder.png',
-        ),
-        SizedBox(height: 15),
-        buildOptionTile(
-          'Transactions',
-          'assets/transaction_2_iconfinder.png',
-        ),
-        SizedBox(height: 15),
-        buildOptionTile(
-          'Orders',
-          'assets/order_iconfinder.png',
-        ),
-      ],
+          Container(
+            //width: MediaQuery.of(context).size.width * .20,
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.asset(
+                  'assets/khansons2.png',
+                  fit: BoxFit.cover,
+                ),
+                const SizedBox(height: 15),
+                const Text(
+                  'We beleive in Quality',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 60),
+          buildOptionTile(
+            'Home',
+            'assets/home_iconfinder.png',
+          ),
+          SizedBox(height: 15),
+          buildOptionTile(
+            'Products',
+            'assets/product_home_iconfinder.png',
+          ),
+          SizedBox(height: 15),
+          buildOptionTile(
+            'Customer',
+            'assets/customer_2_iconfinder.webp',
+          ),
+          SizedBox(height: 15),
+          buildOptionTile(
+            'Categories',
+            'assets/categories_iconfinder.webp',
+          ),
+          SizedBox(height: 15),
+          buildOptionTile(
+            'Users',
+            'assets/users_iconfinder.png',
+          ),
+          SizedBox(height: 15),
+          buildOptionTile(
+            'Transactions',
+            'assets/transaction_2_iconfinder.png',
+          ),
+          SizedBox(height: 15),
+          buildOptionTile(
+            'Orders',
+            'assets/order_iconfinder.png',
+          ),
+        ],
+      ),
     );
   }
 

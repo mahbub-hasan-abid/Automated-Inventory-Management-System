@@ -31,8 +31,8 @@ class _customAppbarState extends State<customAppbar> {
           children: [
             Expanded(
               child: Image.asset(
-                'assets/logo.jpeg',
-                height: 100,
+                'assets/logo2.png',
+                height: 170,
               ),
             ),
             const Expanded(
@@ -40,7 +40,7 @@ class _customAppbarState extends State<customAppbar> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    'Khan Sons Textile & Spinning Mill',
+                    'Inventory Management and Automation System',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
                   ),
@@ -49,7 +49,7 @@ class _customAppbarState extends State<customAppbar> {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Row(
@@ -60,7 +60,7 @@ class _customAppbarState extends State<customAppbar> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
+                      builder: (context) => const HomeScreen(),
                     ))
               },
               child: Column(
@@ -73,10 +73,10 @@ class _customAppbarState extends State<customAppbar> {
                       });
                     },
                     child: AnimatedContainer(
-                        duration: Duration(milliseconds: 300),
+                        duration: const Duration(milliseconds: 300),
                         width: home_isHovered ? 100 : 80,
                         height: home_isHovered ? 100 : 80,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 95, 182, 116),
                           shape: BoxShape.circle,
                         ),
@@ -85,9 +85,8 @@ class _customAppbarState extends State<customAppbar> {
                           child: Image.asset('assets/home_iconfinder.png'),
                         )),
                   ),
-                  Text('Home',
-                      style:
-                          TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
+                  const Text('Home',
+                      style: TextStyle(color: Color.fromARGB(255, 8, 0, 0)))
                 ],
               ),
             ),
@@ -96,7 +95,7 @@ class _customAppbarState extends State<customAppbar> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ProductPage(),
+                      builder: (context) => const ProductPage(),
                     ))
               },
               child: Column(

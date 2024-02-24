@@ -38,9 +38,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            //  Expanded(child: const CustomDrawer()),
+            const CustomDrawer(),
             Container(
-              width: MediaQuery.of(context).size.width,
+              width: MediaQuery.of(context).size.width * .85,
               height: MediaQuery.of(context).size.height,
               color: Color.fromARGB(255, 154, 209, 235),
               child: SingleChildScrollView(
