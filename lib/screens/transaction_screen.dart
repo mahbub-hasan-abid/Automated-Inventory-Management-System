@@ -79,6 +79,9 @@ class _TransactionPageState extends State<TransactionPage> {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return const Center(child: CircularProgressIndicator());
                   }
+                  if (snapshot.data == null) {
+                    return Center(child: Text('No Data'));
+                  }
                   final fetchedData = snapshot.data!.docs;
 
                   return ListView.builder(

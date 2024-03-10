@@ -84,6 +84,9 @@ class _UserPageState extends State<UserPage> {
                       child: CircularProgressIndicator(),
                     );
                   }
+                  if (snapshot.data == null) {
+                    return Center(child: Text('No Data'));
+                  }
 
                   final users = snapshot.data!.docs;
                   return ListView.builder(

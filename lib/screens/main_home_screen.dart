@@ -71,6 +71,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                       child: CircularProgressIndicator(),
                                     );
                                   }
+                                  if (snapshot.data == null) {
+                                    return cardMain(
+                                        name: 'Products', number: 0);
+                                  }
                                   final response = snapshot.data!.docs;
 
                                   return cardMain(
@@ -87,6 +91,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     return const Center(
                                       child: CircularProgressIndicator(),
                                     );
+                                  }
+                                  if (snapshot.data == null) {
+                                    return cardMain(
+                                        name: 'Customers', number: 0);
                                   }
                                   final response = snapshot.data!.docs;
 
@@ -105,6 +113,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                       child: CircularProgressIndicator(),
                                     );
                                   }
+                                  if (snapshot.data == null) {
+                                    return cardMain(
+                                        name: 'Categories', number: 0);
+                                  }
                                   final response = snapshot.data!.docs;
 
                                   return cardMain(
@@ -122,6 +134,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                       child: CircularProgressIndicator(),
                                     );
                                   }
+                                  if (snapshot.data == null) {
+                                    return cardMain(name: 'Users', number: 0);
+                                  }
                                   final response = snapshot.data!.docs;
 
                                   return cardMain(
@@ -137,6 +152,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                     return const Center(
                                       child: CircularProgressIndicator(),
                                     );
+                                  }
+                                  if (snapshot.data == null) {
+                                    return cardMain(name: 'Orders', number: 0);
                                   }
                                   final response = snapshot.data!.docs;
 

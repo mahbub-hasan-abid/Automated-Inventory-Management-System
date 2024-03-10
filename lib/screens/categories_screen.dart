@@ -80,6 +80,9 @@ class _CategoriesPageState extends State<CategoriesPage> {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return Center(child: CircularProgressIndicator());
                   }
+                  if (snapshot.data == null) {
+                    return Center(child: Text('No Data'));
+                  }
                   final fetchedData = snapshot.data!.docs;
 
                   return ListView.builder(
