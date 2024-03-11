@@ -47,7 +47,7 @@ class CustomContaineBox extends StatelessWidget {
               ],
             ),
             height: 80,
-            width: 350,
+            width: 300,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(

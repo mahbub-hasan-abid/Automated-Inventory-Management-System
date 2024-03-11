@@ -21,6 +21,7 @@ class _customAppbarState extends State<customAppbar> {
   bool categories_isHovered = false;
   bool user_isHovered = false;
   bool order_isHovered = false;
+  bool transaction_isHovered = false;
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +37,10 @@ class _customAppbarState extends State<customAppbar> {
               ),
             ),
             const Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    'Inventory Management and Automation System',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
-                  ),
-                ],
+              child: Text(
+                'Inventory Management and Automation System',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
               ),
             ),
           ],
@@ -238,16 +234,17 @@ class _customAppbarState extends State<customAppbar> {
               child: Column(
                 children: [
                   MouseRegion(
-                    onEnter: (_) => setState(() => order_isHovered = true),
+                    onEnter: (_) =>
+                        setState(() => transaction_isHovered = true),
                     onExit: (_) {
                       setState(() {
-                        order_isHovered = false;
+                        transaction_isHovered = false;
                       });
                     },
                     child: AnimatedContainer(
                         duration: Duration(milliseconds: 300),
-                        width: order_isHovered ? 100 : 80,
-                        height: order_isHovered ? 100 : 80,
+                        width: transaction_isHovered ? 100 : 80,
+                        height: transaction_isHovered ? 100 : 80,
                         decoration: BoxDecoration(
                           color: Color.fromARGB(255, 95, 182, 116),
                           shape: BoxShape.circle,

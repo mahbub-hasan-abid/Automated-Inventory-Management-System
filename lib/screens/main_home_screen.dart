@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 32, 32, 32),
-      drawer: const CustomDrawer(),
+      //drawer: const CustomDrawer(),
       body: SingleChildScrollView(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
