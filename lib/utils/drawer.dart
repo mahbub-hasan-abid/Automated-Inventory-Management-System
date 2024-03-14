@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:inventory_management/screens/categories_screen.dart';
 import 'package:inventory_management/screens/customer_screen.dart';
 import 'package:inventory_management/screens/home_page.dart';
+import 'package:inventory_management/screens/main_home_screen.dart';
 import 'package:inventory_management/screens/order_screen.dart';
 import 'package:inventory_management/screens/product_screen.dart';
 import 'package:inventory_management/screens/transaction_screen.dart';
@@ -52,7 +53,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             ),
           ),
           SizedBox(height: ht * 0.01),
-          buildOptionTile('Home', 'assets/home_iconfinder.png', HomePage()),
+          buildOptionTile('Home', 'assets/home_iconfinder.png', HomeScreen()),
           SizedBox(height: ht * .01),
           buildOptionTile(
               'Products', 'assets/product_home_iconfinder.png', ProductPage()),
