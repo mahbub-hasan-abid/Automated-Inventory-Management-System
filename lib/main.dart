@@ -34,3 +34,4 @@ class MyApp extends StatelessWidget {
         home: OKToast(child: Scaffold(body: SplashScreen())));
   }
 }
+

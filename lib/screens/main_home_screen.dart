@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             const CustomDrawer(),
             Container(
-              width: MediaQuery.of(context).size.width * .85,
+              width: MediaQuery.of(context).size.width * 0.85,
               height: MediaQuery.of(context).size.height,
               color: Color.fromARGB(255, 154, 209, 235),
               child: SingleChildScrollView(
@@ -176,8 +176,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                         BorderRadius.all(Radius.circular(30))),
                                 height: 400,
                                 child: BarChartSample1(
-                                  product_value: 974,
-                                  customer_value: 1274,
+                                  product_value: 94,
+                                  customer_value: 74,
                                   categories_value: 37,
                                   user_value: 57,
                                   order_value: 74,

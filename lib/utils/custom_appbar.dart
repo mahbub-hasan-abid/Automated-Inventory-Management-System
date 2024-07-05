@@ -22,6 +22,14 @@ class _customAppbarState extends State<customAppbar> {
   bool user_isHovered = false;
   bool order_isHovered = false;
   bool transaction_isHovered = false;
+  //----------------------------------------------
+  bool home_isSelected = true;
+  bool product_isSelected = false;
+  bool customer_isSelected = false;
+  bool categories_isSelected = false;
+  bool user_isSelected = false;
+  bool order_isSelected = false;
+  bool transaction_isSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -45,19 +53,27 @@ class _customAppbarState extends State<customAppbar> {
             ),
           ],
         ),
-        const SizedBox(
-          height: 20,
-        ),
+        // const SizedBox(
+        //   height: 10,
+        // ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             GestureDetector(
               onTap: () => {
+                home_isSelected = true,
+                product_isSelected = false,
+                customer_isSelected = false,
+                categories_isSelected = false,
+                user_isSelected = false,
+                order_isSelected = false,
+                transaction_isSelected = false,
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const HomeScreen(),
-                    ))
+                    )),
+                setState(() {})
               },
               child: Column(
                 children: [
@@ -72,22 +88,35 @@ class _customAppbarState extends State<customAppbar> {
                         duration: const Duration(milliseconds: 300),
                         width: home_isHovered ? 100 : 80,
                         height: home_isHovered ? 100 : 80,
-                        decoration: const BoxDecoration(
-                          color: Color.fromARGB(255, 95, 182, 116),
-                          shape: BoxShape.circle,
-                        ),
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 95, 182, 116),
+                            shape: BoxShape.circle,
+                            border: home_isSelected
+                                ? Border.all(
+                                    color: Color.fromARGB(255, 0, 4,
+                                        253), // Change this to your desired border color
+                                    width: 5.0, // Adjust the width as needed
+                                  )
+                                : null),
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0),
                           child: Image.asset('assets/home_iconfinder.png'),
                         )),
                   ),
-                  const Text('Home',
+                  Text('Home',
                       style: TextStyle(color: Color.fromARGB(255, 8, 0, 0)))
                 ],
               ),
             ),
             InkWell(
               onTap: () => {
+                home_isSelected = false,
+                product_isSelected = true,
+                customer_isSelected = false,
+                categories_isSelected = false,
+                user_isSelected = false,
+                order_isSelected = false,
+                transaction_isSelected = false,
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -108,9 +137,15 @@ class _customAppbarState extends State<customAppbar> {
                         width: product_isHovered ? 100 : 80,
                         height: product_isHovered ? 100 : 80,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 95, 182, 116),
-                          shape: BoxShape.circle,
-                        ),
+                            color: Color.fromARGB(255, 95, 182, 116),
+                            shape: BoxShape.circle,
+                            border: product_isSelected
+                                ? Border.all(
+                                    color: Color.fromARGB(255, 0, 4,
+                                        253), // Change this to your desired border color
+                                    width: 5.0, // Adjust the width as needed
+                                  )
+                                : null),
                         child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Image.asset(
@@ -124,6 +159,13 @@ class _customAppbarState extends State<customAppbar> {
             ),
             InkWell(
               onTap: () => {
+                home_isSelected = false,
+                product_isSelected = false,
+                customer_isSelected = true,
+                categories_isSelected = false,
+                user_isSelected = false,
+                order_isSelected = false,
+                transaction_isSelected = false,
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => CustomerPage()))
               },
@@ -141,9 +183,15 @@ class _customAppbarState extends State<customAppbar> {
                         width: customer_isHovered ? 100 : 80,
                         height: customer_isHovered ? 100 : 80,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 95, 182, 116),
-                          shape: BoxShape.circle,
-                        ),
+                            color: Color.fromARGB(255, 95, 182, 116),
+                            shape: BoxShape.circle,
+                            border: customer_isSelected
+                                ? Border.all(
+                                    color: Color.fromARGB(255, 0, 4,
+                                        253), // Change this to your desired border color
+                                    width: 5.0, // Adjust the width as needed
+                                  )
+                                : null),
                         child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Image.asset(
