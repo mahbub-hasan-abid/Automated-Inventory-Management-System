@@ -1,11 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/firebase_options.dart';
+import 'package:inventory_management/screens/categories_screen.dart';
+import 'package:inventory_management/screens/customer_screen.dart';
 
 import 'package:inventory_management/screens/main_home_screen.dart';
+import 'package:inventory_management/screens/order_screen.dart';
+import 'package:inventory_management/screens/product_screen.dart';
 import 'package:inventory_management/screens/splash_screen.dart';
 import 'package:inventory_management/screens/transaction_module.dart';
 import 'package:inventory_management/screens/transaction_screen.dart';
+import 'package:inventory_management/screens/user_screen.dart';
 import 'package:oktoast/oktoast.dart';
 
 void main() async {
@@ -34,4 +39,3 @@ class MyApp extends StatelessWidget {
         home: OKToast(child: Scaffold(body: SplashScreen())));
   }
 }
-

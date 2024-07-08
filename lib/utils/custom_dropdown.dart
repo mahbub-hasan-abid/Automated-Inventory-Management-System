@@ -51,7 +51,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
                   filled: true,
                   fillColor: Color.fromARGB(255, 223, 220, 213),
                   border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
+                      // borderSide: BorderSide.none,
                       borderRadius: BorderRadius.circular(10))),
               onChanged: (String? newValue) {
                 setState(() {

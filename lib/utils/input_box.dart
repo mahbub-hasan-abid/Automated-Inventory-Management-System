@@ -13,7 +13,7 @@ class CustomInputBox extends StatelessWidget {
         height: 40,
         width: MediaQuery.of(context).size.width * .40,
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
@@ -31,7 +31,8 @@ class CustomInputBox extends StatelessWidget {
                     filled: true,
                     fillColor: Color.fromARGB(255, 223, 220, 213),
                     border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
+                        // borderSide: BorderSide.none,
+
                         borderRadius: BorderRadius.circular(10))),
               ),
             ),

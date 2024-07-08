@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:inventory_management/screens/product_module.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
 import 'package:inventory_management/utils/flutter_toast.dart';
@@ -28,65 +29,95 @@ class _ProductPageState extends State<ProductPage> {
           child: Column(
             children: [
               customAppbar(),
-              ListTile(
-                title: Container(
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width * .965,
                   color: const Color.fromARGB(255, 2, 52, 94),
-                  child: const Row(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Expanded(
-                          flex: 2,
-                          child: Text(
-                            '     No',
-                            style: TextStyle(color: Colors.white),
-                          )),
-                      Expanded(
-                          flex: 2,
-                          child: Text(
-                            'Product ID',
-                            style: TextStyle(color: Colors.white),
-                          )),
-                      Expanded(
-                          flex: 6,
-                          child: Text(
-                            'Name',
-                            style: TextStyle(color: Colors.white),
-                          )),
-                      Expanded(
-                          flex: 2,
-                          child: Text(
-                            'Stock',
-                            style: TextStyle(color: Colors.white),
-                          )),
-                      Expanded(
-                          flex: 3,
-                          child: Text(
-                            'Price',
-                            style: TextStyle(color: Colors.white),
-                          )),
-                      Expanded(
-                          flex: 8,
-                          child: Text(
-                            'Description',
-                            style: TextStyle(color: Colors.white),
-                          )),
-                      Expanded(
-                          flex: 4,
-                          child: Text(
-                            'Category',
-                            style: TextStyle(color: Colors.white),
-                          )),
-                      Expanded(
-                          flex: 1,
-                          child: Text(
-                            'Edit ',
-                            style: TextStyle(color: Colors.white),
-                          )),
-                      Expanded(
-                          flex: 2,
-                          child: Text(
-                            'Delete',
-                            style: TextStyle(color: Colors.white),
-                          ))
+                      Container(
+                        width: MediaQuery.of(context).size.width *
+                            (2 * 0.03), // No
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '    No',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width *
+                            (2 * 0.03), // Product ID
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Product ID',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width *
+                            (4 * 0.03), // Name
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Name',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width *
+                            (2 * 0.0333), // Stock
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Stock',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width *
+                            (3 * 0.0333), // Price
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Price',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width *
+                            (8 * 0.0333), // Description
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Description',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width *
+                            (4 * 0.0333), // Category
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Category',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width *
+                            (2 * 0.0333), // Edit
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Edit',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width *
+                            (2 * 0.0333), // Delete
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Delete',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -111,77 +142,93 @@ class _ProductPageState extends State<ProductPage> {
                     itemCount: fetchedData.length,
                     itemBuilder: (context, index) {
                       return Card(
-                        elevation: 3,
-                        color: Color.fromARGB(255, 192, 188, 188),
-                        child: ListTile(
-                          title: Container(
-                            // color: const Color.fromARGB(255, 2, 52, 94),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                    flex: 2,
-                                    child: Text(
-                                      '     $index',
-                                      //   style: TextStyle(color: Colors.white),
-                                    )),
-                                Expanded(
-                                    flex: 2,
-                                    child: Text(
-                                      fetchedData[index]['id'],
-                                      //  style: TextStyle(color: Colors.white),
-                                    )),
-                                Expanded(
-                                    flex: 6,
-                                    child: Text(
-                                      fetchedData[index]['name'],
-                                      //  style: TextStyle(color: Colors.white),
-                                    )),
-                                Expanded(
-                                    flex: 2,
-                                    child: Text(
-                                      fetchedData[index]['stock'],
-                                      //   style: TextStyle(color: Colors.white),
-                                    )),
-                                Expanded(
-                                    flex: 3,
-                                    child: Text(
-                                      fetchedData[index]['price'],
-                                      //  style: TextStyle(color: Colors.white),
-                                    )),
-                                Expanded(
-                                    flex: 8,
-                                    child: Text(
-                                      fetchedData[index]['description'],
-                                      //   style: TextStyle(color: Colors.white),
-                                    )),
-                                Expanded(
-                                    flex: 4,
-                                    child: Text(
-                                      fetchedData[index]['category'],
-                                      //  style: TextStyle(color: Colors.white),
-                                    )),
-                                Expanded(
-                                    flex: 1,
-                                    child: Text(
-                                      'Edit ',
-                                      //   style: TextStyle(color: Colors.white),
-                                    )),
+                          elevation: 3,
+                          color: Color.fromARGB(255, 192, 188, 188),
+                          child: ListTile(
+                              title: Container(
+                                  //  color: Color.fromARGB(255, 14, 209, 20),
+                                  child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                Container(
+                                  width: MediaQuery.of(context).size.width *
+                                      (2 * 0.03), // Flex: 2
+                                  child: Text(
+                                    '     $index',
+                                    //   style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                Container(
+                                  width: MediaQuery.of(context).size.width *
+                                      (2 * 0.03), // Flex: 3
+                                  child: Text(
+                                    fetchedData[index]['id'],
+                                    //  style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                Container(
+                                  width: MediaQuery.of(context).size.width *
+                                      (4 * 0.03), // Flex: 6
+                                  child: Text(
+                                    fetchedData[index]['name'],
+                                    //  style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                Container(
+                                  width: MediaQuery.of(context).size.width *
+                                      (2 * 0.0333), // Flex: 2
+                                  child: Text(
+                                    " ${fetchedData[index]['stock']}",
+                                    //   style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                Container(
+                                  width: MediaQuery.of(context).size.width *
+                                      (3 * 0.0333), // Flex: 3
+                                  child: Text(
+                                    "  ${fetchedData[index]['price']}",
+                                    //  style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                Container(
+                                  width: MediaQuery.of(context).size.width *
+                                      (8 * 0.0333), // Flex: 8
+                                  child: Text(
+                                    " ${fetchedData[index]['description']}",
+                                    //   style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                Container(
+                                  width: MediaQuery.of(context).size.width *
+                                      (4 * 0.0333), // Flex: 4
+                                  child: Text(
+                                    " ${fetchedData[index]['category']}",
+                                    //  style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                Container(
+                                  width: MediaQuery.of(context).size.width *
+                                      (2 * 0.0333), // Flex: 1
+                                  child: Text(
+                                    ' Edit ',
+                                    //   style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
                                 GestureDetector(
                                   onTap: () async {
                                     await deleteProduct(fetchedData[index].id);
                                   },
-                                  child: Expanded(
-                                      flex: 2,
-                                      child: Text(
-                                        'Delete',
-                                        //  style: TextStyle(color: Colors.white),
-                                      )),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
+                                  child: Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        (2 * 0.0333), // Flex: 2
+                                    child: Text(
+                                      ' Delete',
+                                      //  style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                              ]))));
                     },
                   );
                 },
@@ -191,33 +238,59 @@ class _ProductPageState extends State<ProductPage> {
         ),
       ),
       bottomNavigationBar: Container(
-        height: 50,
-        color: const Color.fromARGB(255, 2, 52, 94),
+        //height: 50,
+        color: Color.fromARGB(255, 2, 52, 94),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              '  Manage Product',
-              style: TextStyle(color: Colors.white),
+              '  Manage Products',
+              style: TextStyle(color: Colors.white, fontSize: 18),
             ),
             Padding(
               padding: EdgeInsets.all(8.0),
               child: Hero(
                 tag: 'Product_page_to_module',
-                child: CircleAvatar(
-                  radius: 40,
-                  child: Stack(children: [
-                    Center(
-                        child: IconButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ProductModule(),
-                                  ));
-                            },
-                            icon: Icon(Icons.add))),
-                  ]),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ProductModule(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20.0),
+                      gradient: LinearGradient(
+                        colors: [Colors.blue.shade800, Colors.blue.shade500],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.blue.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.add,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               ),
             )

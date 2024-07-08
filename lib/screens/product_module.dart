@@ -120,6 +120,9 @@ class _ProductModuleState extends State<ProductModule> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        SizedBox(
+                          height: 10,
+                        ),
                         CustomInputBox(
                           controller: productNameText,
                           title: 'Product Name',

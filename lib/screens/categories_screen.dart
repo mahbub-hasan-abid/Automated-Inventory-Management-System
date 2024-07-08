@@ -51,19 +51,19 @@ class _CategoriesPageState extends State<CategoriesPage> {
                       Expanded(
                           flex: 10,
                           child: Text(
-                            'Name',
+                            '  Name',
                             style: TextStyle(color: Colors.white),
                           )),
                       Expanded(
                           flex: 1,
                           child: Text(
-                            'Edit ',
+                            '       Edit ',
                             style: TextStyle(color: Colors.white),
                           )),
                       Expanded(
                           flex: 1,
                           child: Text(
-                            'Delete',
+                            '       Delete',
                             style: TextStyle(color: Colors.white),
                           ))
                     ],
@@ -139,29 +139,60 @@ class _CategoriesPageState extends State<CategoriesPage> {
         ),
       ),
       bottomNavigationBar: Container(
-        height: 50,
-        color: const Color.fromARGB(255, 2, 52, 94),
+        //height: 50,
+        color: Color.fromARGB(255, 2, 52, 94),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              '  Manage Product',
-              style: TextStyle(color: Colors.white),
+              '  Manage Categories',
+              style: TextStyle(color: Colors.white, fontSize: 18),
             ),
             Padding(
               padding: EdgeInsets.all(8.0),
-              child: CircleAvatar(
-                radius: 40,
-                child: Center(
-                    child: IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => CategoriesModule(),
-                              ));
-                        },
-                        icon: Icon(Icons.add))),
+              child: Hero(
+                tag: 'Product_page_to_module',
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CategoriesModule(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20.0),
+                      gradient: LinearGradient(
+                        colors: [Colors.blue.shade800, Colors.blue.shade500],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.blue.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.add,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ),
             )
           ],

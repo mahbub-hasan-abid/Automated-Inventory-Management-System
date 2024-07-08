@@ -28,7 +28,19 @@ class CustomSearchBox extends StatelessWidget {
             flex: 17,
             child: TextField(
               controller: controller,
-              style: const TextStyle(fontSize: 15),
+              keyboardType: TextInputType.text,
+              textInputAction: TextInputAction.search,
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Color.fromARGB(255, 223, 220, 213),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                      width: 2,
+                    )),
+                // style: const TextStyle(fontSize: 15),
+              ),
             ),
           ),
         ],

@@ -87,6 +87,9 @@ class _UserModuleState extends State<UserModule> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  SizedBox(
+                    height: 10,
+                  ),
                   CustomInputBox(
                     controller: fullNameText,
                     title: 'User Name',

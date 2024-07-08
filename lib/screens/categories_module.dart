@@ -84,6 +84,9 @@ class _CategoriesModuleState extends State<CategoriesModule> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  SizedBox(
+                    height: 10,
+                  ),
                   CustomInputBox(
                     controller: categoryNameText,
                     title: 'Category Name',

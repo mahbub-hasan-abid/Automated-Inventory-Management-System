@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:inventory_management/screens/order_module.dart';
 import 'package:inventory_management/utils/custom_appbar.dart';
 import 'package:inventory_management/utils/generate_pdf.dart';
@@ -131,7 +132,7 @@ class _OrderPageState extends State<OrderPage> {
                             Expanded(
                                 flex: 1,
                                 child: Text(
-                                  '     $index',
+                                  '     ${index + 1}',
                                   //    style: TextStyle(color: Colors.white),
                                 )),
                             Expanded(
@@ -266,11 +267,44 @@ class _OrderPageState extends State<OrderPage> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  '  Manage Order',
-                  style: TextStyle(color: Colors.white),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8, top: 10),
+                  child: Text(
+                    '  Manage Order',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
-                CustomInputBox(controller: searchText, title: 'Search')
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        ' Search',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      Container(
+                        width: 250,
+                        height: 30,
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Enter your order id to search',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            filled: true,
+                            fillColor: Colors.grey.shade200,
+                            contentPadding:
+                                EdgeInsets.symmetric(horizontal: 12.0),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
             Column(children: [
@@ -280,42 +314,73 @@ class _OrderPageState extends State<OrderPage> {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.1,
                   ),
-                  const Text('Quantity  ',
-                      style: TextStyle(color: Colors.white)),
-                  const Text("  Total Amount",
-                      style: TextStyle(color: Colors.white))
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: const Text('Quantity                     ',
+                        style: TextStyle(color: Colors.white)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: const Text("  Total Amount",
+                        style: TextStyle(color: Colors.white)),
+                  )
                 ],
               ),
               const SizedBox(
                 height: 20,
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children: [
-              //     Text('Order   :   ', style: TextStyle(color: Colors.white)),
-              //     Text('                #data from db  ',
-              //         style: TextStyle(color: Colors.white)),
-              //     Text("  #amount from db",
-              //         style: TextStyle(color: Colors.white))
-              //   ],
-              // )
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Order   :   ', style: TextStyle(color: Colors.white)),
+                  Text('          120', style: TextStyle(color: Colors.white)),
+                  Text("                                18490  ",
+                      style: TextStyle(color: Colors.white))
+                ],
+              )
             ]),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: CircleAvatar(
-                radius: 20,
-                child: Center(
-                    child: IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => OrderModule(),
-                              ));
-                        },
-                        icon: Icon(Icons.add))),
+            GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => OrderModule(),
+                ),
               ),
-            )
+              child: Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    gradient: LinearGradient(
+                      colors: [Colors.blue.shade800, Colors.blue.shade500],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.blue.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

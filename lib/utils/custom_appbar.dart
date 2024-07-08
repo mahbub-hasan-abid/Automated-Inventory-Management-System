@@ -7,6 +7,14 @@ import 'package:inventory_management/screens/product_screen.dart';
 import 'package:inventory_management/screens/transaction_screen.dart';
 import 'package:inventory_management/screens/user_screen.dart';
 
+bool home_isSelected = true;
+bool product_isSelected = false;
+bool customer_isSelected = false;
+bool categories_isSelected = false;
+bool user_isSelected = false;
+bool order_isSelected = false;
+bool transaction_isSelected = false;
+
 class customAppbar extends StatefulWidget {
   customAppbar({super.key});
 
@@ -23,13 +31,6 @@ class _customAppbarState extends State<customAppbar> {
   bool order_isHovered = false;
   bool transaction_isHovered = false;
   //----------------------------------------------
-  bool home_isSelected = true;
-  bool product_isSelected = false;
-  bool customer_isSelected = false;
-  bool categories_isSelected = false;
-  bool user_isSelected = false;
-  bool order_isSelected = false;
-  bool transaction_isSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +42,14 @@ class _customAppbarState extends State<customAppbar> {
             Expanded(
               child: Image.asset(
                 'assets/logo2.png',
-                height: 170,
+                height: 130,
               ),
             ),
             const Expanded(
               child: Text(
                 'Inventory Management and Automation System',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
             ),
           ],
@@ -68,12 +69,16 @@ class _customAppbarState extends State<customAppbar> {
                 user_isSelected = false,
                 order_isSelected = false,
                 transaction_isSelected = false,
+                // print(
+                //     'Home---------------------------------------------------'),
+                // print(home_isSelected),
+                // print(product_isSelected),
+                setState(() {}),
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const HomeScreen(),
                     )),
-                setState(() {})
               },
               child: Column(
                 children: [
@@ -93,8 +98,8 @@ class _customAppbarState extends State<customAppbar> {
                             shape: BoxShape.circle,
                             border: home_isSelected
                                 ? Border.all(
-                                    color: Color.fromARGB(255, 0, 4,
-                                        253), // Change this to your desired border color
+                                    color: Color.fromARGB(255, 2, 52,
+                                        94), // Change this to your desired border color
                                     width: 5.0, // Adjust the width as needed
                                   )
                                 : null),
@@ -117,6 +122,11 @@ class _customAppbarState extends State<customAppbar> {
                 user_isSelected = false,
                 order_isSelected = false,
                 transaction_isSelected = false,
+                // print(
+                //     'Product---------------------------------------------------'),
+                // print(home_isSelected),
+                // print(product_isSelected),
+                setState(() {}),
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -137,21 +147,29 @@ class _customAppbarState extends State<customAppbar> {
                         width: product_isHovered ? 100 : 80,
                         height: product_isHovered ? 100 : 80,
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 95, 182, 116),
-                            shape: BoxShape.circle,
-                            border: product_isSelected
-                                ? Border.all(
-                                    color: Color.fromARGB(255, 0, 4,
-                                        253), // Change this to your desired border color
-                                    width: 5.0, // Adjust the width as needed
-                                  )
-                                : null),
+                          color: Color.fromARGB(255, 95, 182, 116),
+                          shape: BoxShape.circle,
+                          // border: product_isSelected
+                          //     ? Border.all(
+                          //         color: Color.fromARGB(255, 0, 4,
+                          //             253), // Change this to your desired border color
+                          //         width: 5.0, // Adjust the width as needed
+                          //       )
+                          //     : null
+                          border: product_isSelected
+                              ? Border.all(
+                                  color: Color.fromARGB(255, 2, 52,
+                                      94), // Change this to your desired border color
+                                  width: 5.0, // Adjust the width as needed
+                                )
+                              : null,
+                        ),
                         child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Image.asset(
                                 'assets/product_home_iconfinder.png'))),
                   ),
-                  Text('Products',
+                  Text('Products ',
                       style:
                           TextStyle(color: const Color.fromARGB(255, 8, 0, 0)))
                 ],
@@ -187,8 +205,8 @@ class _customAppbarState extends State<customAppbar> {
                             shape: BoxShape.circle,
                             border: customer_isSelected
                                 ? Border.all(
-                                    color: Color.fromARGB(255, 0, 4,
-                                        253), // Change this to your desired border color
+                                    color: Color.fromARGB(255, 2, 52,
+                                        94), // Change this to your desired border color
                                     width: 5.0, // Adjust the width as needed
                                   )
                                 : null),
@@ -205,6 +223,13 @@ class _customAppbarState extends State<customAppbar> {
             ),
             InkWell(
               onTap: () => {
+                home_isSelected = false,
+                product_isSelected = false,
+                customer_isSelected = false,
+                categories_isSelected = true,
+                user_isSelected = false,
+                order_isSelected = false,
+                transaction_isSelected = false,
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -227,6 +252,13 @@ class _customAppbarState extends State<customAppbar> {
                         decoration: BoxDecoration(
                           color: Color.fromARGB(255, 95, 182, 116),
                           shape: BoxShape.circle,
+                          border: categories_isSelected
+                              ? Border.all(
+                                  color: Color.fromARGB(255, 2, 52,
+                                      94), // Change this to your desired border color
+                                  width: 5.0, // Adjust the width as needed
+                                )
+                              : null,
                         ),
                         child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -241,6 +273,13 @@ class _customAppbarState extends State<customAppbar> {
             ),
             InkWell(
               onTap: () => {
+                home_isSelected = false,
+                product_isSelected = false,
+                customer_isSelected = false,
+                categories_isSelected = false,
+                user_isSelected = true,
+                order_isSelected = false,
+                transaction_isSelected = false,
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => UserPage()))
               },
@@ -260,6 +299,13 @@ class _customAppbarState extends State<customAppbar> {
                         decoration: BoxDecoration(
                           color: Color.fromARGB(255, 95, 182, 116),
                           shape: BoxShape.circle,
+                          border: user_isSelected
+                              ? Border.all(
+                                  color: Color.fromARGB(255, 2, 52,
+                                      94), // Change this to your desired border color
+                                  width: 5.0, // Adjust the width as needed
+                                )
+                              : null,
                         ),
                         child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -273,6 +319,13 @@ class _customAppbarState extends State<customAppbar> {
             ),
             InkWell(
               onTap: () => {
+                home_isSelected = false,
+                product_isSelected = false,
+                customer_isSelected = false,
+                categories_isSelected = false,
+                user_isSelected = false,
+                order_isSelected = false,
+                transaction_isSelected = true,
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -296,6 +349,13 @@ class _customAppbarState extends State<customAppbar> {
                         decoration: BoxDecoration(
                           color: Color.fromARGB(255, 95, 182, 116),
                           shape: BoxShape.circle,
+                          border: transaction_isSelected
+                              ? Border.all(
+                                  color: Color.fromARGB(255, 2, 52,
+                                      94), // Change this to your desired border color
+                                  width: 5.0, // Adjust the width as needed
+                                )
+                              : null,
                         ),
                         child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -310,6 +370,13 @@ class _customAppbarState extends State<customAppbar> {
             ),
             InkWell(
               onTap: () => {
+                home_isSelected = false,
+                product_isSelected = false,
+                customer_isSelected = false,
+                categories_isSelected = false,
+                user_isSelected = false,
+                order_isSelected = true,
+                transaction_isSelected = false,
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -332,6 +399,13 @@ class _customAppbarState extends State<customAppbar> {
                         decoration: BoxDecoration(
                           color: Color.fromARGB(255, 95, 182, 116),
                           shape: BoxShape.circle,
+                          border: order_isSelected
+                              ? Border.all(
+                                  color: Color.fromARGB(255, 2, 52,
+                                      94), // Change this to your desired border color
+                                  width: 5.0, // Adjust the width as needed
+                                )
+                              : null,
                         ),
                         child: Padding(
                             padding: const EdgeInsets.all(8.0),

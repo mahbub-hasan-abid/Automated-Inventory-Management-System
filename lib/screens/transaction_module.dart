@@ -79,29 +79,29 @@ class _TransactionModuleState extends State<TransactionModule> {
               ),
               Container(
                 height: 35,
-                color: const Color.fromARGB(255, 154, 209, 235),
-                child: const Hero(
-                  tag: 'Product_page_to_module',
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Transaction Module',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
-                      ),
-                    ],
-                  ),
+                color: const Color.fromARGB(255, 240, 21, 5),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Transaction Module',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),
+                  ],
                 ),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  SizedBox(
+                    height: 10,
+                  ),
                   CustomInputBox(
                     controller: descriptionText,
-                    title: 'Transaction Discription',
+                    title: ' Discription',
                   ),
                   CustomDropDown(
                     options: ['Credit', 'Debit'],

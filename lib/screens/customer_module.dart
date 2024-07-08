@@ -90,6 +90,9 @@ class _CustomerModuleState extends State<CustomerModule> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  SizedBox(
+                    height: 10,
+                  ),
                   CustomInputBox(
                     controller: customerNameText,
                     title: 'Full Name',

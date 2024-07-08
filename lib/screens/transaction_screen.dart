@@ -111,19 +111,19 @@ class _TransactionPageState extends State<TransactionPage> {
                               Expanded(
                                   flex: 6,
                                   child: Text(
-                                    info['desc'],
+                                    '${info['desc']}',
                                     style: TextStyle(color: Colors.black),
                                   )),
                               Expanded(
                                   flex: 2,
                                   child: Text(
-                                    info['type'],
+                                    ' ${info['type']}',
                                     style: TextStyle(color: Colors.black),
                                   )),
                               Expanded(
                                   flex: 2,
                                   child: Text(
-                                    info['amount'],
+                                    ' ${info['amount']}',
                                     style: TextStyle(color: Colors.black),
                                   )),
                             ],
@@ -139,33 +139,59 @@ class _TransactionPageState extends State<TransactionPage> {
         ),
       ),
       bottomNavigationBar: Container(
-        height: 50,
-        color: const Color.fromARGB(255, 2, 52, 94),
+        //height: 50,
+        color: Color.fromARGB(255, 2, 52, 94),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               '  Manage Transaction',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white, fontSize: 18),
             ),
             Padding(
               padding: EdgeInsets.all(8.0),
               child: Hero(
                 tag: 'Product_page_to_module',
-                child: CircleAvatar(
-                  radius: 40,
-                  child: Stack(children: [
-                    Center(
-                        child: IconButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => TransactionModule(),
-                                  ));
-                            },
-                            icon: Icon(Icons.add))),
-                  ]),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => TransactionModule(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20.0),
+                      gradient: LinearGradient(
+                        colors: [Colors.blue.shade800, Colors.blue.shade500],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.blue.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.add,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               ),
             )
