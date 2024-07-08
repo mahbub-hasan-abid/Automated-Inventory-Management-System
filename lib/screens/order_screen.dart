@@ -195,33 +195,33 @@ class _OrderPageState extends State<OrderPage> {
                                     style: ElevatedButton.styleFrom(
                                         backgroundColor: Colors.blue),
                                     onPressed: () async {
-                                      await generateAndDownloadInvoice(
-                                        customerAddress: 'Patuakhali',
-                                        customerId: fetchedData[index]
-                                            ['customer_id'],
-                                        customerName: fetchedData[index]
-                                            ['customer_name'],
-                                        orderId: fetchedData[index]['id'],
-                                        products: [
-                                          {
-                                            'price': double.tryParse(
-                                                    fetchedData[index]
-                                                        ['price']) ??
-                                                0,
-                                            'name': fetchedData[index]
-                                                ['product_name'],
-                                            'id': fetchedData[index]
-                                                ['product_id'],
-                                            'quantity': double.tryParse(
-                                                fetchedData[index]
-                                                        ['quantity'] ??
-                                                    0)
-                                          }
-                                        ],
-                                        total: double.tryParse(
-                                                fetchedData[index]['total']) ??
-                                            0,
-                                      );
+                                      // await generateAndDownloadInvoice(
+                                      //   customerAddress: 'Patuakhali',
+                                      //   customerId: fetchedData[index]
+                                      //       ['customer_id'],
+                                      //   customerName: fetchedData[index]
+                                      //       ['customer_name'],
+                                      //   orderId: fetchedData[index]['id'],
+                                      //   products: [
+                                      //     {
+                                      //       'price': double.tryParse(
+                                      //               fetchedData[index]
+                                      //                   ['price']) ??
+                                      //           0,
+                                      //       'name': fetchedData[index]
+                                      //           ['product_name'],
+                                      //       'id': fetchedData[index]
+                                      //           ['product_id'],
+                                      //       'quantity': double.tryParse(
+                                      //           fetchedData[index]
+                                      //                   ['quantity'] ??
+                                      //               0)
+                                      //     }
+                                      //   ],
+                                      //   total: double.tryParse(
+                                      //           fetchedData[index]['total']) ??
+                                      //       0,
+                                      // );
                                     },
                                     child: const Text(
                                       'Generate',

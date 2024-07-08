@@ -27,10 +27,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -71,10 +68,20 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyDCuecM-hL25BOqry6oTvYW62jVe3fzPm4',
-    appId: '1:454968150854:ios:1b8dc899c012deeef43347',
+    appId: '1:454968150854:ios:53977e5df90bb5f0f43347',
     messagingSenderId: '454968150854',
     projectId: 'textille-system-solution',
     storageBucket: 'textille-system-solution.appspot.com',
-    iosBundleId: 'com.example.inventoryManagement.RunnerTests',
+    iosBundleId: 'com.example.inventoryManagement',
   );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyCzRZic0hAysqoGTPboBKxwVSa53atTw3I',
+    appId: '1:454968150854:web:4b748452fda0dfc2f43347',
+    messagingSenderId: '454968150854',
+    projectId: 'textille-system-solution',
+    authDomain: 'textille-system-solution.firebaseapp.com',
+    storageBucket: 'textille-system-solution.appspot.com',
+  );
+
 }
