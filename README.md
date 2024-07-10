@@ -139,7 +139,7 @@ Tanvir Islam Robin
 - **Email**: [tanvir.rrrabin@gmail.com](mailto:tanvir.rrrabin@gmail.com)
 - **Telegram**: [@RooBiiinnn](https://t.me/@RooBiiinnn)
 - **WhatsApp**: [01700685024](https://wa.me/8801700685024)
-- **LinkedIn**: [Mahbub Hasan Abid](https://www.linkedin.com/in/tanvir-robin/)
+- **LinkedIn**: [Tanvir Islam Robin](https://www.linkedin.com/in/tanvir-robin/)
 
 ## Screenshots
 here is  the application's screen short for  visual overview.
