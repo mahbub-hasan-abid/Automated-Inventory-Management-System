@@ -129,12 +129,13 @@ Contributions to the Inventory Management And Automation System are welcome. If 
 ## Contact Information
 I am happy to address any questions or provide further assistance that you may require. If you need any information or have any queries, feel free to contact me. I will be glad to be in touch with you.
 
+Mahbub Hasan Abid
 - **Email**: [mahbubhasanabid00@gmail.com](mailto:mahbubhasanabid00@gmail.com)
 - **Telegram**: [@mhabid00](https://t.me/mhabid00)
 - **WhatsApp**: [01736299581](https://wa.me/8801736299581)
 - **LinkedIn**: [Mahbub Hasan Abid](https://www.linkedin.com/in/mahbub-hasan-abid/)
-  ---
 
+Tanvir Islam Robin
 - **Email**: [tanvir.rrrabin@gmail.com](mailto:tanvir.rrrabin@gmail.com)
 - **Telegram**: [@RooBiiinnn](https://t.me/@RooBiiinnn)
 - **WhatsApp**: [01700685024](https://wa.me/8801700685024)
