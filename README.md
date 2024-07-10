@@ -135,4 +135,27 @@ I am happy to address any questions or provide further assistance that you may r
 - **LinkedIn**: [Mahbub Hasan Abid](https://www.linkedin.com/in/mahbub-hasan-abid/)
 
 ## Screenshots
-(Add screenshots of different pages of the application here to provide a visual overview.)
+here is  the application's screen short for  visual overview.
+![0 splash screen](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/62c50fc7-6fa3-42e4-9dde-f31cfaba8073)
+![1 home](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/6ef6efb0-8230-4bff-b0bd-71d0cc795e2e)
+![2 product](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/a9e28115-04be-46f0-901c-353ff6a5d4db)
+![2 product 2](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/84bea6d8-e4db-4b2d-a3a6-db0bd1277710)
+![3 customer](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/e0409f34-0a53-49d6-974a-5fb77c98736d)
+![3 customer 2](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/3aba0cfc-de62-43a1-ac72-ed9c45ba8348)
+![4 categories](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/f052ba48-e792-470b-a795-830276407090)
+![4 categories 2](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/a94e407c-a073-489e-8d0b-257776c716e0)
+![5 users](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/e51ee104-a3d4-483e-8ffc-ff896f5a569b)
+![5 user 2](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/b1676af3-8ac3-4ab5-a47b-f52b0c1a0683)
+![6 transaction](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/aa1ed6b6-0b66-45c6-ac0b-14b1b898c9e7)
+![6 transaction 2](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/62f37454-db75-4cfb-a508-61f1530ca3e3)
+
+![7 order](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/5f64a3d4-7163-4bf3-999e-5e8eeaf6fa68)
+![7 order 2](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/4e44262b-036a-43d1-ae06-9dcde2450efc)
+
+
+
+
+![invoice](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/0865c7e7-588b-4190-8fea-9823def63f2a)
+![7 orders 4](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/4410751e-dd9d-472e-bea7-29d0881d5e5d)
+![7 orders 3](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/a5e46222-bd2c-411b-8054-98911029ee90)
+
