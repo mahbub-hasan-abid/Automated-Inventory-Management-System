@@ -133,6 +133,12 @@ I am happy to address any questions or provide further assistance that you may r
 - **Telegram**: [@mhabid00](https://t.me/mhabid00)
 - **WhatsApp**: [01736299581](https://wa.me/8801736299581)
 - **LinkedIn**: [Mahbub Hasan Abid](https://www.linkedin.com/in/mahbub-hasan-abid/)
+  ---
+
+- **Email**: [tanvir.rrrabin@gmail.com](mailto:tanvir.rrrabin@gmail.com)
+- **Telegram**: [@RooBiiinnn](https://t.me/@RooBiiinnn)
+- **WhatsApp**: [01700685024](https://wa.me/8801700685024)
+- **LinkedIn**: [Mahbub Hasan Abid](https://www.linkedin.com/in/tanvir-robin/)
 
 ## Screenshots
 here is  the application's screen short for  visual overview.
