@@ -1,4 +1,4 @@
-# Inventory Management And Automation System
+# Automated Inventory Management System
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -27,7 +27,7 @@
 - [Screenshots](#screenshots)
 
 ## Introduction
-The **Inventory Management And Automation System** is a robust application designed to streamline and automate inventory processes using Flutter and Firebase. This system allows users to manage products, customers, categories, users, transactions, and orders efficiently. It features real-time stock tracking, detailed product information, and the ability to generate PDF reports for orders. This is available for macOS, Windows, and also for  web.
+The **Automated Inventory Management System** is a robust application designed to streamline and automate inventory processes using Flutter and Firebase. This system allows users to manage products, customers, categories, users, transactions, and orders efficiently. It features real-time stock tracking, detailed product information, and the ability to generate PDF reports for orders. This is available for macOS, Windows, and also for  web.
 
 
 
