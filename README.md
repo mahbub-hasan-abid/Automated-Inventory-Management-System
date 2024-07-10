@@ -155,7 +155,8 @@ here is  the application's screen short for  visual overview.
 
 
 
-![invoice](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/0865c7e7-588b-4190-8fea-9823def63f2a)
+
 ![7 orders 4](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/4410751e-dd9d-472e-bea7-29d0881d5e5d)
 ![7 orders 3](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/a5e46222-bd2c-411b-8054-98911029ee90)
+![invoice](https://github.com/mahbub-hasan-abid/Inventory-Management-And-Automation-System/assets/133025212/0865c7e7-588b-4190-8fea-9823def63f2a)
 
